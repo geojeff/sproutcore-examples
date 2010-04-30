@@ -3,9 +3,10 @@ Project:   RaphaelPlay
 =============================================================================
 
 This Sproutcore example takes the code of the Raphael Javacript library's 
-Australia example, and puts it in a Sproutcore View. Two other views are 
-defined, one at the top of the page is tied by contentBinding to the
-selected Australian state -- 
+Australia example (http://raphaeljs.com/australia.html), and puts it in a 
+Sproutcore View. Two other views are defined, one at the top of the page is 
+tied by contentBinding to the selected Australian state, and the other at the 
+right is tied to the same controller and the selected state.
 
 TODO:
 
