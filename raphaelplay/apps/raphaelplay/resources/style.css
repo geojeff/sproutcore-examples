@@ -1,0 +1,95 @@
+.state-summary-view {
+position: relative;
+margin: 5px 5px 5px 5px;
+height: 100px;
+width: 1300px;
+background-color: #c0c0c0;
+}
+
+.state-summary-view-name {
+position: absolute;
+top: 0px;
+left: 0px;
+width: 140px;
+font-family: georgia;
+font-size: 22px;
+margin: 5px 5px 5px 15px;
+}
+
+.state-summary-view-desc {
+padding-left: 5px;
+padding-right: 5px;
+padding-bottom: 5px;
+width: 800px;
+border-left: solid 3px black;
+position: absolute;
+top: 0px;
+left: 150px;
+font-family: arial;
+font-size: 12px;
+font-style: italic;
+margin: 5px 5px 5px 5px;
+}
+
+.state-summary-view-population {
+position: absolute;
+top: 0px;
+bottom: 0px;
+right: 0px;
+width: 120px;
+background-color: #008000;
+}
+
+.state-summary-view-population-value {
+padding: 0px;
+margin: 0px 0px 5px 0px;
+font-family: georgia;
+font-size: 22px;
+color: white;
+text-align: center;
+}
+
+.state-summary-view-population-capt {
+padding: 0px;
+margin: 0px;
+font-family: arial;
+font-size: 12px;
+text-align: center;
+color: white;
+}
+
+div.custom-list-item-view div.row{
+position: absolute;
+top: 0px;
+left: 0px;
+right: 0px;
+height: 35px;
+border-width: 0px;
+}
+
+div.custom-list-item-view div.row.standard {
+background-color: #c0c0c0;
+}
+
+div.custom-list-item-view p.name {
+float: left;
+padding: 0px;
+margin: 5px 0px 0px 5px;
+font-family: Georgia;
+font-size: 2em;
+font-weight: bold;
+line-height: normal;
+}
+
+div.custom-list-item-view p.item {
+float: left;
+padding: 0px;
+font-family: Helvetica;
+font-size: 1em;
+line-height: normal;
+}
+
+div.custom-list-item-view div.row.selected {
+background-color: #8ecd66;
+}
+
