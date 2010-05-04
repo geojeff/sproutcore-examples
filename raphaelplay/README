@@ -10,24 +10,39 @@ right is tied to the same controller and the selected state.
 
 TODO:
 
-Use of "selection" terminology needs to be changed to "current," for the
-highlighted Australian state, because it is mouse rollover that fires, not a 
-mouse click.
-
-Can the Raphael object be put in its own controller, or in the existing
-Australian states controller?
-
-Is updateLayer() the place for the Raphael setup? (couldn't get it to work
-by putting it in an init function). updateLayer() sounds like something that
-would be repeatedly called, but the concept of init() vs. updateLayer() 
-elude me now.
-
-Move the detail view to the bottom, or make it fit in a display with the map
-on the left. 
-
-Split this example into two, one for the existing sort of rollover action, 
-and another for typical mouse click seleciton. For the rollover example,
-drop the list, which was put there for learning purposes. Keep the list in
-the mouse click example, and perhaps put the map/detail display on the right, 
-to place focus on selection first.
-
+* Use of "selection" terminology needs to be changed to "current," for the
+  highlighted Australian state, because it is mouse rollover that fires, not a 
+  mouse click.
+  
+* Can the Raphael object be put in its own controller, or in the existing
+  Australian states controller?
+  
+* Is updateLayer() the place for the Raphael setup? (couldn't get it to work
+  by putting it in an init function). updateLayer() sounds like something that
+  would be repeatedly called, but the concept of init() vs. updateLayer() 
+  elude me now.
+  
+* Move the detail view to the bottom, or make it fit in a display with the map
+  on the left. 
+  
+* Split this example into two, one for the existing sort of rollover action, 
+  and another for typical mouse click seleciton. For the rollover example,
+  drop the list, which was put there for learning purposes. Keep the list in
+  the mouse click example, and perhaps put the map/detail display on the right, 
+  to place focus on selection first.
+  
+* Evaluate the use of SC.runloop.begin() and .end(). Needed? When? Initially, 
+  and perhaps permanently, these .begin() and .end() calls wrap the code within
+  the callback from Raphael (onmouseover, onmouseout) events. On irc one day
+  Alex Iskander answered a question about this:
+    
+    Under what circumstances would runloop.begin() and runloop.end() be used?
+    
+        > If you have a custom event that does not go through SproutCore
+        > basically, all events start a run loop
+        > and then trigger the event in SproutCore
+        > then end the run loop.
+        > and technically, everything is an event: the application 
+          starts; the application receives a click; a request to 
+          the server is answered; and so on
+        > ... a timer activates...
