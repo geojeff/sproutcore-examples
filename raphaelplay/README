@@ -46,3 +46,6 @@ TODO:
           starts; the application receives a click; a request to 
           the server is answered; and so on
         > ... a timer activates...
+
+* Look at SCUI/Sai, which is a wrapper that already exists for Raphael. Look at
+  how renderi(), didAppendToDocumenti(), and willDestroyLateri() are used.

@@ -11,17 +11,12 @@ RaphaelPlay.mainPage = SC.Page.design({
     // Add childViews to this pane for views to display immediately on page 
     // load.
     mainPane: SC.MainPane.design({
-        childViews: 'topView raphaelView list'.w(),
+        childViews: 'topView raphaelView'.w(),
 
         topView: SC.View.extend(SC.ContentDisplay, {
             contentBinding: 'RaphaelPlay.australianStatesController.selection',
             anchorLocation: SC.ANCHOR_TOP,
             classNames: ['state-summary-view'],
-
-            //var isSelected = YES;
-            //var standard = !isSelected;
-            //var selected = isSelected;
-            //var classes = { 'standard': standard, 'selected': selected };
 
             contentDisplayProperties: 'name description population'.w(),
 
@@ -57,7 +52,6 @@ RaphaelPlay.mainPage = SC.Page.design({
             }),
 
         raphaelView: SC.View.extend(SC.ContentDisplay, {
-        //raphaelView: SC.View.design( {
             contentBinding: 'RaphaelPlay.australianStatesController.arrangedObjects',
             contentDisplayProperties: 'path'.w(),
             layout: {
@@ -98,9 +92,6 @@ RaphaelPlay.mainPage = SC.Page.design({
                 // array for Raphael paths for the Australian states
 				var aus = {};
                 
-                // the Australian state objects, from the datastore
-                //var content = this.get('content');
-                //var australianStates = RaphaelPlay.australianStatesController;
                 var australianStates = this.get('content');
 
                 if (australianStates != null) {
@@ -126,25 +117,13 @@ RaphaelPlay.mainPage = SC.Page.design({
                                 r.safari();
                                 Raphael.sproutcoreController.unselectAustralianState(stateID)
                             };
-                            //if (stateID == "tas") {
-                            //    st[0].onmouseover();
-                            //}
+                            if (stateID == "tas") {
+                                st[0].onmouseover();
+                            }
                         })(aus[stateID], stateID);
                     })
                 }
             }
-        }),
-
-        list: SC.ScrollView.design({ 
-            layout: { top: 110, left: 500, width: 300, height: 245 }, 
-            contentView: SC.ListView.design({ 
-                layout: { top: 0, bottom: 0, left: 0, right: 0 }, 
-                contentBinding: 'RaphaelPlay.australianStatesController', 
-                selectionBinding:'RaphaelPlay.australianStatesController.selection', 
-                exampleView: RaphaelPlay.CustomListItemView, 
-                rowHeight: 35, 
-                rowSpacing: 0 
-            }), 
         })
 	})
 });
