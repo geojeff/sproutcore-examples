@@ -18,15 +18,15 @@ TODO:
   Australian states controller?
   
 * Is updateLayer() the place for the Raphael setup? (couldn't get it to work
-  by putting it in an init function). updateLayer() sounds like something that
-  would be repeatedly called, but the concept of init() vs. updateLayer() 
-  elude me now.
+  by putting it in an init function).  Look at SCUI/Sai, which is a wrapper 
+  that already exists for Raphael. Look at how renderi(), didAppendToDocument(), 
+  and willDestroyLateri() are used.
   
 * Move the detail view to the bottom, or make it fit in a display with the map
-  on the left. 
+  on the left. Add a title to the page, and perhaps an instructional sentence.
   
 * Split this example into two, one for the existing sort of rollover action, 
-  and another for typical mouse click seleciton. For the rollover example,
+  and another for typical mouse click selection. For the rollover example,
   drop the list, which was put there for learning purposes. Keep the list in
   the mouse click example, and perhaps put the map/detail display on the right, 
   to place focus on selection first.
@@ -47,5 +47,3 @@ TODO:
           the server is answered; and so on
         > ... a timer activates...
 
-* Look at SCUI/Sai, which is a wrapper that already exists for Raphael. Look at
-  how renderi(), didAppendToDocumenti(), and willDestroyLateri() are used.
