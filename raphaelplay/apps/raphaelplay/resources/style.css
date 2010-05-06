@@ -1,3 +1,20 @@
+.state-summary-label {
+position: relative;
+margin: 2px 2px 2px 2px;
+height: 23px;
+width: 213px;
+background-color: #c0c0c0;
+}
+
+.sc-label-view.state-summary-label {
+padding: 5px 5px 5px 5px;
+font-family: georgia;
+font-size: 28px;
+}
+
+.sc-view.raphael-view {
+}
+
 .state-summary-view {
 position: relative;
 margin: 5px 5px 5px 5px;

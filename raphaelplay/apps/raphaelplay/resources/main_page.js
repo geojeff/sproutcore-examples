@@ -11,11 +11,16 @@ RaphaelPlay.mainPage = SC.Page.design({
     // Add childViews to this pane for views to display immediately on page 
     // load.
     mainPane: SC.MainPane.design({
-        childViews: 'topView raphaelView'.w(),
+        childViews: 'summaryLabel summaryView raphaelView'.w(),
 
-        topView: SC.View.extend(SC.ContentDisplay, {
-            contentBinding: 'RaphaelPlay.australianStatesController.selection',
+        summaryLabel: SC.LabelView.design({
             anchorLocation: SC.ANCHOR_TOP,
+            displayValue: "Australian States",
+            classNames: ['state-summary-label'],
+            }), 
+
+        summaryView: SC.View.extend(SC.ContentDisplay, {
+            contentBinding: 'RaphaelPlay.australianStatesController.selection',
             classNames: ['state-summary-view'],
 
             contentDisplayProperties: 'name description population'.w(),
@@ -54,12 +59,13 @@ RaphaelPlay.mainPage = SC.Page.design({
         raphaelView: SC.View.extend(SC.ContentDisplay, {
             contentBinding: 'RaphaelPlay.australianStatesController.arrangedObjects',
             contentDisplayProperties: 'path'.w(),
-            layout: {
-                width: 600,
-                height: 480,
-                centerX: 0,
-                centerY: 0
-            },
+            classNames: ['raphael-view'],
+            //layout: {
+            //    width: 600,
+            //    height: 480,
+            //    centerX: 0,
+            //    centerY: 0
+            //},
             //didCreateLayer: function() {
             //    // Not sure about drawing here; See below.
             //},
