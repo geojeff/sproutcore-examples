@@ -1,6 +1,5 @@
 // ==========================================================================
-// Project:   RaphaelPlay.Task
-// Copyright: ©2009 My Company, Inc.
+// Project:   RaphaelPlay.australianstate.
 // ==========================================================================
 /*globals RaphaelPlay */
 
