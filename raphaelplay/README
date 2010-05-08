@@ -4,16 +4,10 @@ Project:   RaphaelPlay
 
 This Sproutcore example takes the code of the Raphael Javacript library's 
 Australia example (http://raphaeljs.com/australia.html), and puts it in a 
-Sproutcore View. Two other views are defined, one at the top of the page is 
-tied by contentBinding to the selected Australian state, and the other at the 
-right is tied to the same controller and the selected state.
+Sproutcore View. 
 
-TODO:
+Questions:
 
-* Use of "selection" terminology needs to be changed to "current," for the
-  highlighted Australian state, because it is mouse rollover that fires, not a 
-  mouse click.
-  
 * Can the Raphael object be put in its own controller, or in the existing
   Australian states controller?
   
@@ -21,15 +15,6 @@ TODO:
   by putting it in an init function).  Look at SCUI/Sai, which is a wrapper 
   that already exists for Raphael. Look at how renderi(), didAppendToDocument(), 
   and willDestroyLateri() are used.
-  
-* Move the detail view to the bottom, or make it fit in a display with the map
-  on the left. Add a title to the page, and perhaps an instructional sentence.
-  
-* Split this example into two, one for the existing sort of rollover action, 
-  and another for typical mouse click selection. For the rollover example,
-  drop the list, which was put there for learning purposes. Keep the list in
-  the mouse click example, and perhaps put the map/detail display on the right, 
-  to place focus on selection first.
   
 * Evaluate the use of SC.runloop.begin() and .end(). Needed? When? Initially, 
   and perhaps permanently, these .begin() and .end() calls wrap the code within
