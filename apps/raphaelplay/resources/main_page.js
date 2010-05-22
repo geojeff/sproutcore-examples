@@ -15,7 +15,7 @@ RaphaelPlay.mainPage = SC.Page.design({
         }), 
 
         container: SC.ContainerView.design({
-layout: { left: 0, top: 60, height: 620, width: 1110},
+            layout: { left: 0, top: 60, height: 620, width: 1110},
 
             // set by controller as either summaryView or helpView
             nowShowingBinding: "RaphaelPlay.australianStatesController.nowShowing"
