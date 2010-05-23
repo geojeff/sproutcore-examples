@@ -4,7 +4,8 @@ found a compelling case for using it for web development. I started learning by
 going through the Todos example on the Sproutcore web site, then gave embedding
 Raphael javascript in a Sproutcore view (raphaelplay example) a try. After that,
 attention turned to the Quilmes branch and work done by Alex Iskander, who was
-very helpful with learning the latest and greatest, showcased in several apps.
+very helpful with learning the latest and greatest, showcased in several apps, 
+which are descendants of his http://create.tpsitulsa.com/sc/test_controls.html.
 
 Help on the #sproutcore irc channel was really important for getting tips.  One
 tip was about how to use layerNeedsUpdate along with updateLayer for placing the
