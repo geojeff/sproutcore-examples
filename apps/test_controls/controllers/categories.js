@@ -75,10 +75,6 @@ TestControls.groups = [
             SC.Object.create({
                name: "Flow Layout",
                show: "flow_layout_page"
-            }),
-            SC.Object.create({
-               name: "Flow Layout Horizontal (here)",
-               show: "flow_layout_horizontal"
             })
         ]
     }),
