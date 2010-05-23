@@ -2,7 +2,9 @@ This repository was set up for posting and maintaining small projects illustrati
 sproutcore functionality. I started with sproutcore in April 2009, and already
 find a compelling case for using it for web development. I started learning by
 going through the Todos example on the sproutcore web site, then gave embedding
-Raphael javascript in a sproutcore view (raphaelplay example).
+Raphael javascript in a sproutcore view (raphaelplay example) a try. After that,
+attention turned to the quilmes branch and work done by Alex Iskander, who was
+very helpful with learning the latest and greatest, showcased in several apps.
 
 Help on the #sproutcore irc channel was really important for getting tips.  One
 was about how to use layerNeedsUpdate along with updateLayer for placing the
@@ -70,4 +72,9 @@ unneeded tmp files in the repo (something realized along the way):
   git commit -a -m "Added URL for Raphael Australia example in README."
   git push origin master
 
-  And....., we're off...
+  That prepared the repo for starting, but a few weeks later, with help from
+  #sproutcore, I realized that the directory structure in the inital repo was
+  .../sproutcore-examples/raphaelplay/apps/raphaelplay... -- the higher level
+  raphaelplay was superfluous. So, needing to make a new branch for quilmes,
+  I used git mv to rearrange things to have sproutcore-examples/apps and
+  sproutcore-examples/frameworks.
