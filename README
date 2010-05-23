@@ -1,23 +1,23 @@
 This repository was set up for posting and maintaining small projects illustrating
-sproutcore functionality. I started with sproutcore in April 2009, and already
-find a compelling case for using it for web development. I started learning by
-going through the Todos example on the sproutcore web site, then gave embedding
-Raphael javascript in a sproutcore view (raphaelplay example) a try. After that,
-attention turned to the quilmes branch and work done by Alex Iskander, who was
+Sproutcore functionality. I started with Sproutcore in April 2009, and soon
+found a compelling case for using it for web development. I started learning by
+going through the Todos example on the Sproutcore web site, then gave embedding
+Raphael javascript in a Sproutcore view (raphaelplay example) a try. After that,
+attention turned to the Quilmes branch and work done by Alex Iskander, who was
 very helpful with learning the latest and greatest, showcased in several apps.
 
 Help on the #sproutcore irc channel was really important for getting tips.  One
-was about how to use layerNeedsUpdate along with updateLayer for placing the
+tip was about how to use layerNeedsUpdate along with updateLayer for placing the
 Raphael code.  Another was how to use SC.RunLoop.begin() and .end() in the 
-callbacks from Raphael to sproutcore, if that is the correct terminology.
+interfacing between Raphael and Sproutcore.
 
-Also, rklancer helped me one afternoon to set up my github account, and ran me
+Also, Richard Klancer helped me one afternoon to set up my github account, 
 through creating this repository.  It might be useful to see the steps taken
 to set this up.  I already had raphaelplay within my own dev area on my system
 (Macbook Pro), so it was a matter of creating the repository on github through
 the github web interface, followed by command line steps to send it up. From 
 my command line history, here are steps, which include those to avoid putting
-unneeded tmp files in the repo (something realized along the way):
+unneeded tmp and vi ~ files in the repo (something realized along the way):
 
 1. Create github account (geojeff) and fill in basic info.
 2. Generate public ssh key for setting up communications between my local
@@ -29,7 +29,7 @@ unneeded tmp files in the repo (something realized along the way):
   ssh git@github.com        // - hit github.com to initialize
   cd ~/Development/sproutcore
   mkdir sproutcore-examples
-  mv raphaelplay/ sproutcore-examples/    // - raphaelplay already exists
+  mv raphaelplay/ sproutcore-examples/   // - raphaelplay already exists*
   cd sproutcore-examples/
   git init                  // - turn sproutcore-examples dir into repo
   touch README              // - follow steps on github help web site
@@ -73,8 +73,10 @@ unneeded tmp files in the repo (something realized along the way):
   git push origin master
 
   That prepared the repo for starting, but a few weeks later, with help from
-  #sproutcore, I realized that the directory structure in the inital repo was
+  Peter Wagenet, the directory structure was found to be in error (See * above):
   .../sproutcore-examples/raphaelplay/apps/raphaelplay... -- the higher level
-  raphaelplay was superfluous. So, needing to make a new branch for quilmes,
-  I used git mv to rearrange things to have sproutcore-examples/apps and
-  sproutcore-examples/frameworks.
+  raphaelplay dir was unneeded. So, wanting to make a new branch for Quilmes,
+  and to get properly set up for adding additional examples, git mv was used to 
+  rearrange to have sproutcore-examples/apps and sproutcore-examples/frameworks. 
+  Alex Iskander helped finalize the working system with proper Sproutcore/Quilmes 
+  inclusion and Buildfile configuration to incorporate Quilmes goodies.
