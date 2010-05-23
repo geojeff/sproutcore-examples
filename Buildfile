@@ -3,5 +3,6 @@
 # Copyright: ©2010 My Company, Inc.
 # ===========================================================================
 
-# Add initial buildfile information here
-config :all, :required => [:sproutcore, :raphael]
+config :raphaelplay, :required => [:sproutcore, :raphael]
+config :test_controls, :required => [:sproutcore, "sproutcore/forms", "sproutcore/animation"]
+config :phone_controls, :required => [:sproutcore, "sproutcore/forms", "sproutcore/animation"]
