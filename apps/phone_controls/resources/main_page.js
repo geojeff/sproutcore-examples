@@ -18,7 +18,6 @@ require("resources/flow_layout_page");
 require("resources/scroll_page");
 require("resources/list_page");
 require("resources/tab_page");
-require("views/groups_list");
 
 PhoneControls.mainPage = SC.Page.create({
   
