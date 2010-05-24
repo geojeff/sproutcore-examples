@@ -19,7 +19,6 @@ require("resources/scroll_page");
 require("resources/list_page");
 require("resources/tab_page");
 require("views/groups_list");
-require("views/categories_list");
 
 PhoneControls.mainPage = SC.Page.create({
   
