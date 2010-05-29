@@ -11,7 +11,7 @@ TestControls.START = SC.Responder.create({
         TestControls.getPath('mainPage.mainPane').append() ;
         TestControls.groupsController.set("content", TestControls.groups);
             
-        TestControls.invokeLater("makeFirstResponder", 1, TestControls.FLOWLAYOUTHORIZONTAL);
+        TestControls.invokeLater("makeFirstResponder", 1, TestControls.GROUPS);
         },
           
     willLoseFirstResponder: function() {
