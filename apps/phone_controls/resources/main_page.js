@@ -23,6 +23,7 @@ PhoneControls.mainPage = SC.Page.create({
   
   mainPane: SC.MainPane.design(SC.Animatable, {
     defaultResponder: PhoneControls,
+    wantsAcceleratedLayer: YES,
     childViews: "navigationView".w(),
     navigationView: SC.NavigationView.design({ })
   }),

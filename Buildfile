@@ -3,11 +3,22 @@
 # Copyright: ©2010 My Company, Inc.
 # ===========================================================================
 
+config :all, :url_prefix => "/sc/sproutcore/"
+config :demo, :url_prefix => "/sc/demo/"
+config :flot_graph_types, :url_prefix => "/sc/flot_graph_types/"
+config :flot_setting_options, :url_prefix => "/sc/flot_setting_options/"
+config :flot_dual_axis, :url_prefix => "/sc/flot_dual_axis/"
+config :flot_carbon_dioxide, :url_prefix => "/sc/flot_carbon_dioxide/"
+config :raphaelplay, :url_prefix => "/sc/raphaelplay/"
+config :test_controls, :url_prefix => "/sc/test_controls/"
+config :phone_controls, :url_prefix => "/sc/phone_controls/"
+
 config :flot, :required => [:sproutcore]
 config :demo, :required => [:sproutcore, 'flot']
 config :flot_graph_types, :required => [:sproutcore, 'flot']
 config :flot_setting_options, :required => [:sproutcore, 'flot']
-config :flot_dual_axis, :required => [:sproutcore, 'flot']
-config :raphaelplay, :required => [:sproutcore, :raphael]
+config :flot_dual_axis, :required => [:sproutcore, 'flot'], :load_fixtures => true
+config :flot_carbon_dioxide, :required => [:sproutcore, 'flot'], :load_fixtures => true
+config :raphaelplay, :required => [:sproutcore, :raphael], :load_fixtures => true
 config :test_controls, :required => [:sproutcore, "sproutcore/forms", "sproutcore/animation"], :theme => "sproutcore/ace"
 config :phone_controls, :required => [:sproutcore, "sproutcore/forms", "sproutcore/animation"], :theme => "sproutcore/ace"

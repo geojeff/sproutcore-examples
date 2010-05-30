@@ -7,6 +7,7 @@
 /*globals PhoneControls */
 
 PhoneControls.CategoriesList = SC.ScrollView.design({
+    wantsAcceleratedLayer: YES,
     topToolbar: SC.NavigationBarView.design({
         layout: { top: 0, left: 0, right: 0, height: 32 },
         childViews: "label back".w(),
