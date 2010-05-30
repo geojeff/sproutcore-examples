@@ -1,0 +1,11 @@
+=============================================================================
+Project:   FlotCarbonDioxide
+=============================================================================
+
+This Sproutcore example uses the Flot javascript library:
+
+    http://code.google.com/p/flot/
+
+It shows data from:
+
+    http://www.esrl.no@.gov/gmd/ccgg/trends/
