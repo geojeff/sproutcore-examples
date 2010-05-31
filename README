@@ -81,3 +81,6 @@ unneeded tmp and vi ~ files in the repo (something realized along the way):
   rearrange to have sproutcore-examples/apps and sproutcore-examples/frameworks. 
   Alex Iskander helped finalize the working system with proper Sproutcore/Quilmes 
   inclusion and Buildfile configuration to incorporate Quilmes goodies.
+
+  In late May 2010 several examples of graphs using the Flot javascript library were
+  added, with the help of Avi and others  on the irc channel (#sproutcore).
