@@ -125,5 +125,5 @@ and frameworks directories. I did that, played with the demo, looked things
 over, then copied flot-integration/frameworks/flot into the same place in
 sproutcore-examples (sproutcore-examples/frameworks/). 
   
-Later, you should be able to just clone sproutcore-examples and do a could of 
+Later, you should be able to just clone sproutcore-examples and do a couple of 
 git steps to be all set up, but this is how it goes for now.
