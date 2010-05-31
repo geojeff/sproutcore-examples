@@ -1,12 +1,12 @@
 // ==========================================================================
-// Project:   FlotCarbonDioxide.priceVersusExchangeRate Fixtures
+// Project:   FlotDualAxis.priceVersusExchangeRate Fixtures
 // Copyright: ©2009 My Company, Inc.
 // ==========================================================================
-/*globals FlotCarbonDioxide */
+/*globals FlotDualAxis */
 
 sc_require('models/price');
 
-FlotCarbonDioxide.price.FIXTURES = [
+FlotDualAxis.price.FIXTURES = [
     { 'guid': 0,  'epoch': 1167692400000, 'price': 61.05 },
     { 'guid': 1,  'epoch': 1167778800000, 'price': 58.32 },
     { 'guid': 2,  'epoch': 1167865200000, 'price': 57.35 },
