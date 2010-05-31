@@ -99,4 +99,12 @@ unneeded tmp and vi ~ files in the repo (something realized along the way):
   the latest development code. To do all of this properly, as a repo that you
   could clone and get running immediately, I should use git submodule setup for these 
   framework libraries. As it stands now, you'll need to handle getting flot and
-  maybe sproutcore in your frameworks directory.
+  maybe sproutcore in your frameworks directory. For flot, you can clone Bo Xiao's
+  http://github.com/imxiaobo/iamxiaobo/tree/master/flot-integration, which will
+  get you a demo app in a separate flot-integration directory, with its own apps
+  and frameworks directories. I did that, played with the demo, looked things
+  over, then copied flot-integration/frameworks/flot into the same place in
+  sproutcore-examples (sproutcore-examples/frameworks/). 
+  
+  Later, you should be able to just clone sproutcore-examples and do a could of 
+  git steps to be all set up, but this is how it goes for now.
