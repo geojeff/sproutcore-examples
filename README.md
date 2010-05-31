@@ -35,59 +35,59 @@ unneeded tmp and vi ~ files in the repo (something realized along the way):
 2. Generate public ssh key for setting up communications between my local
    system and github.
 
-    cd ~/.ssh                 // - .ssh in my home dir has personal ssh info
-    ssh-keygen                // - generate the key
-    cat id_rsa.pub | pbcopy   // - copy the key using handy pipe to pbcopy
-    ssh git@github.com        // - hit github.com to initialize
+> cd ~/.ssh                 // - .ssh in my home dir has personal ssh info
+> ssh-keygen                // - generate the key
+> cat id_rsa.pub | pbcopy   // - copy the key using handy pipe to pbcopy
+> ssh git@github.com        // - hit github.com to initialize
 
 3. Start sproutcore-examples in my development area, on a Macbook Pro. Move
    raphaelplay, the first app I started, into sproutcore-examples, then
    proceed with git configuration and initialization steps.
 
-    cd ~/Development/sproutcore
-    mkdir sproutcore-examples
-    mv raphaelplay/ sproutcore-examples/   // - raphaelplay already exists*
-    cd sproutcore-examples/
-    git init                  // - turn sproutcore-examples dir into repo
-    touch README              // - follow steps on github help web site
-    git add README
-    git commit -m 'first commit'
-    git remote add origin git@github.com:geojeff/sproutcore-examples.git
-    git push origin master
-    git add raphaelplay       // - add raphaelplay, a dir with subdirs
-    git status                // - Before commiting, it can be wise to
-                                   look over what would be added to the
-                                   repo, using `git status`. Doing so
-                                   showed that the raphaelplay/tmp dir and
-                                   many files in there would be added,
-                                   which is not needed. Also, `git status`
-                                   listed files ending with tildes (~), 
-                                   which are backup files from my editor,
-                                   vi, which are also not needed. So, these
-                                   unneeded files should be excluded by
-                                   making a .gitignore file in the root
-                                   of the repo, which is the current dir.
-    vi .gitignore             // - Two lines were added to .gitignore:
-
-                                        raphaelplay/tmp/
-                                        *~
-
-    git status                // - `git status` now shows only needed 
-                                   files, a much shorter list.
-    git add .gitignore
-    git rm -r --cached raphaelplay/tmp    // - Get rid of unneeded files,
-    git rm -r --cached *~                      which are in local cache.
-    git status
-    git commit .gitignore -m "Updated .gitignore to ignore vi ~ files and raphaelplay/tmp"
-    git commit -a -m "Initial commit of raphaelplay"
-    git push origin master
-    cd raphaelplay/
-    vi README 
-    git commit -a -m "Added README content for raphaelplay"
-    git push origin master
-    vi README 
-    git commit -a -m "Added URL for Raphael Australia example in README."
-    git push origin master
+> cd ~/Development/sproutcore
+> mkdir sproutcore-examples
+> mv raphaelplay/ sproutcore-examples/   // - raphaelplay already exists*
+> cd sproutcore-examples/
+> git init                  // - turn sproutcore-examples dir into repo
+> touch README              // - follow steps on github help web site
+> git add README
+> git commit -m 'first commit'
+> git remote add origin git@github.com:geojeff/sproutcore-examples.git
+> git push origin master
+> git add raphaelplay       // - add raphaelplay, a dir with subdirs
+> git status                // - Before commiting, it can be wise to
+>                                look over what would be added to the
+>                                repo, using `git status`. Doing so
+>                                showed that the raphaelplay/tmp dir and
+>                                many files in there would be added,
+>                                which is not needed. Also, `git status`
+>                                listed files ending with tildes (~), 
+>                                which are backup files from my editor,
+>                                vi, which are also not needed. So, these
+>                                unneeded files should be excluded by
+>                                making a .gitignore file in the root
+>                                of the repo, which is the current dir.
+> vi .gitignore             // - Two lines were added to .gitignore:
+>
+>                                     raphaelplay/tmp/
+>                                     *~
+>
+> git status                // - `git status` now shows only needed 
+>                                files, a much shorter list.
+> git add .gitignore
+> git rm -r --cached raphaelplay/tmp    // - Get rid of unneeded files,
+> git rm -r --cached *~                      which are in local cache.
+> git status
+> git commit .gitignore -m "Updated .gitignore to ignore vi ~ files and raphaelplay/tmp"
+> git commit -a -m "Initial commit of raphaelplay"
+> git push origin master
+> cd raphaelplay/
+> vi README 
+> git commit -a -m "Added README content for raphaelplay"
+> git push origin master
+> vi README 
+> git commit -a -m "Added URL for Raphael Australia example in README."
+> git push origin master
 
 4. Fix-up, clean-up, and a move to the quilmes branch.
 
