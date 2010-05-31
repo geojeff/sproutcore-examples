@@ -9,10 +9,15 @@ which are descendants of his http://create.tpsitulsa.com/sc/test_controls.html.
 
 Help on the #sproutcore irc channel was really important for getting tips.  One
 tip was about how to use layerNeedsUpdate along with updateLayer for placing the
-Raphael code.  Another was how to use SC.RunLoop.begin() and .end() in the 
-interfacing between Raphael and Sproutcore.
+Raphael code.  See this post by Colin Campbell that explains why:
+http://colincodes.tumblr.com/post/512234561/sproutcore-and-flot.
 
-Also, Richard Klancer helped me one afternoon to set up my github account, 
+Another tip was how to use SC.RunLoop.begin() and .end() in the interfacing 
+between Raphael and Sproutcore. Using these calls around a block of code will
+issue a kind of pause in the action of Sproutcore bindings and other things,
+so the code in the block is executed immediately. It is a performance tweak.
+
+Richard Klancer helped me one afternoon to set up my github account, 
 through creating this repository.  It might be useful to see the steps taken
 to set this up.  I already had raphaelplay within my own dev area on my system
 (Macbook Pro), so it was a matter of creating the repository on github through
@@ -84,3 +89,14 @@ unneeded tmp and vi ~ files in the repo (something realized along the way):
 
   In late May 2010 several examples of graphs using the Flot javascript library were
   added, with the help of Avi and others  on the irc channel (#sproutcore).
+
+  As of May 2010, this repo contains two directories, apps and frameworks. apps 
+  contains the examples. frameworks contains only raphael, and does not contain flot 
+  and sproutcore. My local version of sproutcore-examples/frameworks has all
+  three: raphael, flot, sproutcore.  To run these examples, you will need raphael
+  and flot in your frameworks and, depending on how you have your development
+  environment set up, maybe sproutcore itself, the quilmes branch, which contains
+  the latest development code. To do all of this properly, as a repo that you
+  could clone and get running immediately, I should use git submodule setup for these 
+  framework libraries. As it stands now, you'll need to handle getting flot and
+  maybe sproutcore in your frameworks directory.
