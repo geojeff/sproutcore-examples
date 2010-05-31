@@ -1,10 +1,8 @@
 # ===========================================================================
-# Project:   RaphaelPlay
-# Copyright: ©2010 My Company, Inc.
+# Project: geojeff's sproutcore-examples
 # ===========================================================================
 
 config :all, :url_prefix => "/sc/sproutcore/"
-config :demo, :url_prefix => "/sc/demo/"
 config :flot_graph_types, :url_prefix => "/sc/flot_graph_types/"
 config :flot_setting_options, :url_prefix => "/sc/flot_setting_options/"
 config :flot_dual_axis, :url_prefix => "/sc/flot_dual_axis/"
@@ -14,7 +12,6 @@ config :test_controls, :url_prefix => "/sc/test_controls/"
 config :phone_controls, :url_prefix => "/sc/phone_controls/"
 
 config :flot, :required => [:sproutcore]
-config :demo, :required => [:sproutcore, 'flot']
 config :flot_graph_types, :required => [:sproutcore, 'flot']
 config :flot_setting_options, :required => [:sproutcore, 'flot']
 config :flot_dual_axis, :required => [:sproutcore, 'flot'], :load_fixtures => true
