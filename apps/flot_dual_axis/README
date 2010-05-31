@@ -7,3 +7,24 @@ dual axis example:
 
     http://people.iola.dk/olau/flot/examples/
 
+DEPENDS ON:
+
+    http://github.com/imxiaobo/iamxiaobo/tree/master/flot-integration
+
+    I cloned the flot-integration code, which is a full Sproutcore project
+    with Buildfile. I got the flot-integration demo working. Then I copied
+    flot-integration/frameworks/flot into the same dir of my own project.
+
+MY Buildfile entries:
+    
+    For flot:
+
+        config :flot, :required => [:sproutcore]
+
+    So sc-build will build tmp/build/sc/flot_dual_axis/...
+
+        config :flot_dual_axis, :url_prefix => "/sc/flot_dual_axis/"
+
+    To pull in flot, and, also, fixtures is needed if deploying:
+
+        config :flot_dual_axis, :required => [:sproutcore, 'flot'], :load_fixtures => true
