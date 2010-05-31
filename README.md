@@ -8,12 +8,12 @@ going through the Todos example on the Sproutcore web site, then gave embedding
 Raphael javascript in a Sproutcore view (raphaelplay example) a try. After that,
 attention turned to the Quilmes branch and work done by Alex Iskander, who was
 very helpful with learning the latest and greatest, showcased in several apps, 
-which are descendants of his http://create.tpsitulsa.com/sc/test_controls.html.
+which are descendants of his [test_controls app](http://create.tpsitulsa.com/sc/test_controls.html).
 
 Help on the #sproutcore irc channel was really important for getting tips.  One
 tip was about how to use layerNeedsUpdate along with updateLayer for placing the
-Raphael code.  See this post by Colin Campbell that explains why:
-http://colincodes.tumblr.com/post/512234561/sproutcore-and-flot.
+Raphael code.  See this [post](http://colincodes.tumblr.com/post/512234561/sproutcore-and-flot)
+by Colin Campbell that explains why.
 
 Another tip was how to use SC.RunLoop.begin() and .end() in the interfacing 
 between Raphael and Sproutcore. Using these calls around a block of code will
@@ -91,14 +91,14 @@ unneeded tmp and vi ~ files in the repo (something realized along the way):
 
 4. Fix-up, clean-up, and a move to the quilmes branch.
 
-That prepared the repo for starting, but a few weeks later, with help from
-Peter Wagenet, the directory structure was found to be in error (See         above):
-.../sproutcore-examples/raphaelplay/apps/raphaelplay... -- the higher level
-raphaelplay dir was unneeded. So, wanting to make a new branch for Quilmes,
-and to get properly set up for adding additional examples, git mv was used to 
-rearrange to have sproutcore-examples/apps and sproutcore-examples/frameworks. 
-Alex Iskander helped finalize the working system with proper Sproutcore/Quilmes 
-inclusion and Buildfile configuration to incorporate Quilmes goodies.
+   That prepared the repo for starting, but a few weeks later, with help from
+   Peter Wagenet, the directory structure was found to be in error (See         above):
+   .../sproutcore-examples/raphaelplay/apps/raphaelplay... -- the higher level
+   raphaelplay dir was unneeded. So, wanting to make a new branch for Quilmes,
+   and to get properly set up for adding additional examples, git mv was used to 
+   rearrange to have sproutcore-examples/apps and sproutcore-examples/frameworks. 
+   Alex Iskander helped finalize the working system with proper Sproutcore/Quilmes 
+   inclusion and Buildfile configuration to incorporate Quilmes goodies.
 
 Flot
 ----
@@ -119,7 +119,7 @@ the latest development code. To do all of this properly, as a repo that you
 could clone and get running immediately, I should use git submodule setup for these 
 framework libraries. As it stands now, you'll need to handle getting flot and
 maybe sproutcore in your frameworks directory. For flot, you can clone Bo Xiao's
-http://github.com/imxiaobo/iamxiaobo/tree/master/flot-integration, which will
+[flot-integration](http://github.com/imxiaobo/iamxiaobo/tree/master/flot-integration), which will
 get you a demo app in a separate flot-integration directory, with its own apps
 and frameworks directories. I did that, played with the demo, looked things
 over, then copied flot-integration/frameworks/flot into the same place in
