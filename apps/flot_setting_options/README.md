@@ -3,7 +3,7 @@ FlotSettingOptions
 
 This Sproutcore example uses the [Flot javascript library](http://code.google.com/p/flot/).
 
-It shows data from [Flot's graph types example](http://people.iola.dk/olau/flot/examples/setting-options.html).
+It shows data from [Flot's setting options example](http://people.iola.dk/olau/flot/examples/setting-options.html).
 
 DEPENDS ON:
 -----------
