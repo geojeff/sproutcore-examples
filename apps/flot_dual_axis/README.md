@@ -21,9 +21,10 @@ Buildfile entries:
  
         config :flot, :required => [:sproutcore]
 
-* So sc-build will build tmp/build/sc/flot_dual_axis/...
+* So sc-build will build tmp/build/sc/flot_dual_axis/... NOTE: load_fixtures is set
+  so that fixtures data for the graph is loaded correctly.
      
-        config :flot_dual_axis, :url_prefix => "/sc/flot_dual_axis/"
+        config :flot_dual_axis, :url_prefix => "/sc/flot_dual_axis/", :load_fixtures => true
          
 * To pull in flot:
                             
