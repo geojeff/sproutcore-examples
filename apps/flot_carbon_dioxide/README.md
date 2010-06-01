@@ -1,24 +1,21 @@
-=============================================================================
 Project:   FlotCarbonDioxide
-=============================================================================
+============================
 
-This Sproutcore example uses the Flot javascript library:
+This Sproutcore example uses the [Flot javascript library](http://code.google.com/p/flot/).
 
-    http://code.google.com/p/flot/
-
-It shows data from:
-
-    http://www.esrl.no@.gov/gmd/ccgg/trends/
+It shows data from NOAA's Earth System Research Laboratory, [Trends in Atmospheric Carbon Dioxide](http://www.esrl.no@.gov/gmd/ccgg/trends/).
 
 DEPENDS ON:
+-----------
 
-    http://github.com/imxiaobo/iamxiaobo/tree/master/flot-integration
+    [Bo Xiao's flot-integration[(http://github.com/imxiaobo/iamxiaobo/tree/master/flot-integration)
 
     I cloned the flot-integration code, which is a full Sproutcore project
     with Buildfile. I got the flot-integration demo working. Then I copied
     flot-integration/frameworks/flot into the same dir of my own project.
     
 MY Buildfile entries:
+---------------------
          
     For flot:
  
