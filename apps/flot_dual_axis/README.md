@@ -3,7 +3,7 @@ FlotDualAxis
 
 This Sproutcore example uses the [Flot javascript library](http://code.google.com/p/flot/).
 
-It shows data from NOAA's Earth System Research Laboratory, [Trends in Atmospheric Carbon Dioxide](http://www.esrl.no@.gov/gmd/ccgg/trends/).
+It shows data from [Flot's dual axis example](http://people.iola.dk/olau/flot/examples/dual-axis.html).
 
 DEPENDS ON:
 -----------
