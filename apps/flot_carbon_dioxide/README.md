@@ -1,5 +1,5 @@
-Project:   FlotCarbonDioxide
-============================
+FlotCarbonDioxide
+=================
 
 This Sproutcore example uses the [Flot javascript library](http://code.google.com/p/flot/).
 
