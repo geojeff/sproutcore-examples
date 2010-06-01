@@ -8,24 +8,24 @@ It shows data from NOAA's Earth System Research Laboratory, [Trends in Atmospher
 DEPENDS ON:
 -----------
 
-    [Bo Xiao's flot-integration[(http://github.com/imxiaobo/iamxiaobo/tree/master/flot-integration)
+[Bo Xiao's flot-integration](http://github.com/imxiaobo/iamxiaobo/tree/master/flot-integration)
 
-    I cloned the flot-integration code, which is a full Sproutcore project
-    with Buildfile. I got the flot-integration demo working. Then I copied
-    flot-integration/frameworks/flot into the same dir of my own project.
+I cloned the flot-integration code, which is a full Sproutcore project
+with Buildfile. I got the flot-integration demo working. Then I copied
+flot-integration/frameworks/flot into the frameworks dir of sproutcore-examples.
     
-MY Buildfile entries:
----------------------
+Buildfile entries:
+------------------
          
-    For flot:
+* For flot:
  
         config :flot, :required => [:sproutcore]
 
-    So sc-build will build tmp/build/sc/flot_carbon_dioxide/...
+* So sc-build will build tmp/build/sc/flot_carbon_dioxide/...
      
         config :flot_dual_axis, :url_prefix => "/sc/flot_carbon_dioxide/"
          
-    To pull in flot:
+* To pull in flot:
                             
         config :flot_dual_axis, :required => [:sproutcore, 'flot']
                                       ~
