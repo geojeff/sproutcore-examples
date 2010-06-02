@@ -2,7 +2,7 @@
 
 sc_require('models/co2data');
 
-FlotDualAxis.rate.FIXTURES = {
+FlotDualAxis.rate.FIXTURES = [
     { 'guid': 0,  'timestamp': -372189600000, 'year': 1958, 'month':  3, 'averageCO2': 315.71, 'interpolatedCO2': 315.71, 'trendCO2': 314.69, 'numberOfDays': -1 },
     { 'guid': 1,  'timestamp': -369597600000, 'year': 1958, 'month':  4, 'averageCO2': 317.45, 'interpolatedCO2': 317.45, 'trendCO2': 315.21, 'numberOfDays': -1 },
     { 'guid': 2,  'timestamp': -366922800000, 'year': 1958, 'month':  5, 'averageCO2': 317.50, 'interpolatedCO2': 317.50, 'trendCO2': 314.77, 'numberOfDays': -1 },
@@ -629,4 +629,4 @@ FlotDualAxis.rate.FIXTURES = {
     { 'guid': 623,  'timestamp': 1266127200000, 'year': 2010, 'month':  2, 'averageCO2': 390.04, 'interpolatedCO2': 390.04, 'trendCO2': 389.13, 'numberOfDays': 25 },
     { 'guid': 624,  'timestamp': 1268802000000, 'year': 2010, 'month':  3, 'averageCO2': 391.11, 'interpolatedCO2': 391.11, 'trendCO2': 389.49, 'numberOfDays': 29 },
     { 'guid': 625,  'timestamp': 1271394000000, 'year': 2010, 'month':  4, 'averageCO2': 392.39, 'interpolatedCO2': 392.39, 'trendCO2': 389.64, 'numberOfDays': 27 },
-}
+]

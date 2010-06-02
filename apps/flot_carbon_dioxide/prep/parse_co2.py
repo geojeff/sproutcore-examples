@@ -52,11 +52,11 @@ print '/*globals FlotDualAxis */'
 print
 print 'sc_require(\'models/co2data\');'
 print
-print 'FlotDualAxis.co2data.FIXTURES = {'
+print 'FlotDualAxis.co2data.FIXTURES = ['
 
 index = 0
 for data in co2_data:
     print '    { \'guid\': %d, ' % index, '\'timestamp\': %d, \'year\': %d, \'month\': %2d, \'averageCO2\': %6.2f, \'interpolatedCO2\': %6.2f, \'trendCO2\': %6.2f, \'numberOfDays\': %d },' % data
     index += 1
 
-print '}'
+print ']'
