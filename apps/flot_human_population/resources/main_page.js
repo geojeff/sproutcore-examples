@@ -9,7 +9,7 @@
 
 FlotHumanPopulation.mainPage = SC.Page.design({
     mainPane: SC.MainPane.design({
-        childViews: 'graphTitle graph checkboxesView explanation'.w(),
+        childViews: 'graphTitle checkboxesView graph explanation'.w(),
         graphTitle: SC.ToolbarView.design({
             layout: { top: 0, left: 0, right: 0, height: 36 },
             anchorLocation: SC.ANCHOR_TOP,
@@ -22,9 +22,9 @@ FlotHumanPopulation.mainPage = SC.Page.design({
             })
         }),
         graph: Flot.GraphView.design({
-            layout: { top: 50, right: 40, bottom: 310, left: 40 } ,
+            layout: { top: 50, right: 40, bottom: 40, left: 240 } ,
+            //layout: { top: 50, right: 40, bottom: 310, left: 40 } ,
             dataBinding: 'FlotHumanPopulation.graphController.selection',
-            //selectionBinding: 'FlotHumanPopulation.graphController.selection',
             optionsBinding: 'FlotHumanPopulation.graphController.options'
         }),
 //        areasView: SC.ListView.design({
@@ -35,6 +35,7 @@ FlotHumanPopulation.mainPage = SC.Page.design({
 //            contentCheckboxKey: "isChecked"
 //        }),
         checkboxesView: SC.View.design({
+            layout: { left: 18, right: 0, bottom: 70, top: 10},
             childViews: "form".w(),
             form: SC.FormView.design({
                 classNames: ["flot_human_population"],
@@ -48,43 +49,36 @@ FlotHumanPopulation.mainPage = SC.Page.design({
                 }),
                 world: SC.FormView.row(SC.CheckboxView.design({
                     layout: {width: 150, height: 24},
-                    title: "World",
                     controlSize: SC.SMALL_CONTROL_SIZE,
                     valueBinding: 'FlotHumanPopulation.graphController.isWorldDataShowing'
                 })),
                 africa: SC.FormView.row(SC.CheckboxView.design({
                     layout: {width: 150, height: 24},
-                    title: "Africa",
                     controlSize: SC.SMALL_CONTROL_SIZE,
                     valueBinding: 'FlotHumanPopulation.graphController.isAfricaDataShowing'
                 })),
                 asia: SC.FormView.row(SC.CheckboxView.design({
                     layout: {width: 150, height: 24},
-                    title: "Asia",
                     controlSize: SC.SMALL_CONTROL_SIZE,
                     valueBinding: 'FlotHumanPopulation.graphController.isAsiaDataShowing',
                 })),
                 europe: SC.FormView.row(SC.CheckboxView.design({
                     layout: {width: 150, height: 24},
-                    title: "Europe",
                     controlSize: SC.SMALL_CONTROL_SIZE,
                     valueBinding: 'FlotHumanPopulation.graphController.isEuropeDataShowing',
                 })),
                 latin_america: SC.FormView.row(SC.CheckboxView.design({
                     layout: {width: 150, height: 24},
-                    title: "Latin America",
                     controlSize: SC.SMALL_CONTROL_SIZE,
                     valueBinding: 'FlotHumanPopulation.graphController.isLatinAmericaDataShowing'
                 })),
                 northern_america: SC.FormView.row(SC.CheckboxView.design({
                     layout: {width: 150, height: 24},
-                    title: "Northern America",
                     controlSize: SC.SMALL_CONTROL_SIZE,
                   valueBinding: 'FlotHumanPopulation.graphController.isNorthernAmericaDataShowing'
                 })),
                 oceania: SC.FormView.row(SC.CheckboxView.design({
                     layout: {width: 150, height: 24},
-                    title: "Oceania",
                     controlSize: SC.SMALL_CONTROL_SIZE,
                     valueBinding: 'FlotHumanPopulation.graphController.isOceaniaDataShowing'
                 }))
