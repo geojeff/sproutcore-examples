@@ -48,11 +48,11 @@ for line in open('co2_mm_mlo.txt').readlines():
         # seconds = calendar.timegm(struct_time)
         # print dt_from_struct_time.strftime("%Y-%m-%d"), dt_from_timegm.strftime("%Y-%m-%d")
 
-print '/*globals FlotDualAxis */'
+print '/*globals FlotCarbonDioxide */'
 print
 print 'sc_require(\'models/co2data\');'
 print
-print 'FlotDualAxis.co2data.FIXTURES = ['
+print 'FlotCarbonDioxide.co2data.FIXTURES = ['
 
 index = 0
 for data in co2_data:
