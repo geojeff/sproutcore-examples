@@ -1,6 +1,6 @@
 .state-summary-label {
 position: relative;
-margin: 2px 2px 2px 2px;
+margin: 8px 8px 8px 8px;
 height: 23px;
 width: 213px;
 background-color: #c0c0c0;
@@ -8,6 +8,7 @@ background-color: #c0c0c0;
 
 .sc-label-view.state-summary-label {
 padding: 5px 5px 5px 5px;
+margin: 5px 5px 5px 5px;
 font-family: georgia;
 font-size: 28px;
 }
@@ -29,27 +30,24 @@ background-color: #c0c0c0;
 
 .state-summary-view-name {
 position: absolute;
-top: 0px;
-left: 0px;
-width: 140px;
+left: 7px;
+width: 115px;
 font-family: georgia;
-font-size: 22px;
+font-size: 18px;
+padding: 5px 5px 5px 15px;
 margin: 5px 5px 5px 15px;
 }
 
 .state-summary-view-desc {
-padding-left: 5px;
-padding-right: 5px;
-padding-bottom: 5px;
-width: 800px;
-border-left: solid 3px black;
+padding: 15px 15px 15px 15px;
+width: 600px;
 position: absolute;
 top: 0px;
-left: 150px;
+left: 125px;
 font-family: arial;
 font-size: 12px;
 font-style: italic;
-margin: 5px 5px 5px 5px;
+margin: 15px 15px 15px 15px;
 }
 
 .state-summary-view-population {

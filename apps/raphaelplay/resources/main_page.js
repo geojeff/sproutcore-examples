@@ -15,7 +15,7 @@ RaphaelPlay.mainPage = SC.Page.design({
         }), 
 
         container: SC.ContainerView.design({
-            layout: { left: 0, top: 60, height: 620, width: 1110},
+            layout: { left: 10, top: 60, height: 520, width: 900},
 
             // set by controller as either summaryView or helpView
             nowShowingBinding: "RaphaelPlay.australianStatesController.nowShowing"
@@ -77,7 +77,7 @@ RaphaelPlay.mainPage = SC.Page.design({
 	}),
 
     summaryView: SC.View.extend(SC.ContentDisplay, {
-        layout: { left: 0, right: 0, height: 100, width: 1100 },
+        layout: { left: 10, right: 0, height: 100, width: 880 },
         contentBinding: 'RaphaelPlay.australianStatesController.selection',
         classNames: ['state-summary-view'],
 
@@ -113,7 +113,7 @@ RaphaelPlay.mainPage = SC.Page.design({
         classNames: "state-summary-help",
         textAlign: SC.ALIGN_CENTER,
         controlSize: SC.HUGE_CONTROL_SIZE,
-        layout: { left: 0, right: 0, height: 24, centerY: 0 },
+        layout: { left: 10, right: 0, height: 24, width: 880 },
         value: "Hover over a state to see its description."
     })
 });
