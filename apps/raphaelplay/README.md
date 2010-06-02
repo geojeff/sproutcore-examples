@@ -43,7 +43,7 @@ proper git submodule for it (yet)..
 Buildfile entries:
 ------------------
 
-* So sc-build will build tmp/build/sc/flot_dual_axis/... 
+* So sc-build will build tmp/build/sc/raphaelplay/... 
      
         config :raphaelplay, :url_prefix => "/sc/raphaelplay/"
          
