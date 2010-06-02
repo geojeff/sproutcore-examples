@@ -30,7 +30,7 @@ print 'sc_require(\'models/human_population_data\');'
 print
 print 'FlotHumanPopulation.human_population_data.FIXTURES = ['
 
-for guid,record in zip(guids,data):
-    print '    { \'guid\': \'%s\', ' % guid, '\'timestamp\': %14d, \'year\': %d, \'world\': %4d, \'africa\': %3d, \'asia\': %4d, \'europe\': %3d, \'latin_america\': %3d, \'northern_america\': %3d, \'oceania\': %2d },' % record
+for record in data:
+    print '    { \'timestamp\': %14d, \'year\': %d, \'world\': %4d, \'africa\': %3d, \'asia\': %4d, \'europe\': %3d, \'latin_america\': %3d, \'northern_america\': %3d, \'oceania\': %2d },' % record
 
 print '    ]'
