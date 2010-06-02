@@ -23,9 +23,9 @@ Buildfile entries:
 
 * So sc-build will build tmp/build/sc/flot_carbon_dioxide/... 
      
-        config :flot_dual_axis, :url_prefix => "/sc/flot_carbon_dioxide/"
+        config :flot_carbon_dioxide, :url_prefix => "/sc/flot_carbon_dioxide/"
          
 * To pull in flot.  NOTE: load_fixtures is set to true so that fixtures data for the graph will be loaded.
                             
-        config :flot_dual_axis, :required => [:sproutcore, 'flot'], :load_fixtures => true
+        config :flot_carbon_dioxide, :required => [:sproutcore, 'flot'], :load_fixtures => true
                                       ~
