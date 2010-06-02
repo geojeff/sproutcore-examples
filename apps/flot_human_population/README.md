@@ -3,7 +3,7 @@ FlotHumanPopulation
 
 This Sproutcore example uses the [Flot javascript library](http://code.google.com/p/flot/).
 
-It shows data from NOAA's Earth System Research Laboratory, [Trends in Atmospheric Carbon Dioxide](http://www.esrl.no@.gov/gmd/ccgg/trends/).
+It shows data from from Wikipedia's [world population page](http://en.wikipedia.org/wiki/World_populationA).
 
 DEPENDS ON:
 -----------
@@ -21,11 +21,11 @@ Buildfile entries:
  
         config :flot, :required => [:sproutcore]
 
-* So sc-build will build tmp/build/sc/flot_carbon_dioxide/... 
+* So sc-build will build tmp/build/sc/flot_human_population/... 
      
-        config :flot_dual_axis, :url_prefix => "/sc/flot_carbon_dioxide/"
+        config :flot_human_population, :url_prefix => "/sc/flot_human_population/"
          
-* To pull in flot.  NOTE: load_fixtures is set to true so that fixtures data for the graph will be loaded.
+* To pull in flot.  NOTE: load_fixtures is set to true so that fixtures data for the graph will be loaded. Also, Ace theming is used.
                             
-        config :flot_dual_axis, :required => [:sproutcore, 'flot'], :load_fixtures => true
+        config :flot_human_population, :required => [:sproutcore, "sproutcore/forms", 'flot'], :load_fixtures => true, :theme => "sproutcore/ace"
                                       ~
