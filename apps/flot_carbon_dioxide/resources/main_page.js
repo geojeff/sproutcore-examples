@@ -25,7 +25,7 @@ FlotCarbonDioxide.mainPage = SC.Page.design({
             optionsBinding: 'FlotCarbonDioxide.graphController.options'
         }),
         explanation: SC.LabelView.design({
-            layout: { left: 8, bottom: 0, right: 0, height: 80 },
+            layout: { left: 28, bottom: 0, right: 0, height: 80 },
             value: 'See current graph, data, and data description at NOAA&#39;s <a href="http://www.esrl.no@.gov/gmd/ccgg/trends/" target="_blank">Trends in Atmospheric Carbon Dioxide</a>',
             escapeHTML: NO
         })
