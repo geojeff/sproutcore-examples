@@ -11,13 +11,13 @@ FlotHumanPopulation.graphController = SC.ArrayController.create(
 /** @scope FlotHumanPopulation.graphController.prototype */ {
 
     content: [
-        SC.Object.create({area: 'wo', label: 'set1', data:[], 'isShowing': YES }),
-        SC.Object.create({area: 'af', label: 'set2', data:[], 'isShowing': YES }),
-        SC.Object.create({area: 'as', label: 'set3', data:[], 'isShowing': YES }),
-        SC.Object.create({area: 'eu', label: 'set4', data:[], 'isShowing': YES }),
-        SC.Object.create({area: 'la', label: 'set5', data:[], 'isShowing': YES }),
-        SC.Object.create({area: 'na', label: 'set6', data:[], 'isShowing': YES }),
-        SC.Object.create({area: 'oc', label: 'set7', data:[], 'isShowing': YES })
+        SC.Object.create({area: 'wo', label: 'set1', data:[] }),
+        SC.Object.create({area: 'af', label: 'set2', data:[] }),
+        SC.Object.create({area: 'as', label: 'set3', data:[] }),
+        SC.Object.create({area: 'eu', label: 'set4', data:[] }),
+        SC.Object.create({area: 'la', label: 'set5', data:[] }),
+        SC.Object.create({area: 'na', label: 'set6', data:[] }),
+        SC.Object.create({area: 'oc', label: 'set7', data:[] })
     ],
 
     options: SC.Object.create({}),
