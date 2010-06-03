@@ -22,7 +22,7 @@ FlotHumanPopulation.mainPage = SC.Page.design({
             })
         }),
         graph: Flot.GraphView.design({
-            layout: { top: 50, right: 40, bottom: 40, left: 240 } ,
+            layout: { top: 50, right: 40, bottom: 80, left: 240 } ,
             //layout: { top: 50, right: 40, bottom: 310, left: 40 } ,
             dataBinding: 'FlotHumanPopulation.graphController.selection',
             optionsBinding: 'FlotHumanPopulation.graphController.options'
@@ -35,7 +35,7 @@ FlotHumanPopulation.mainPage = SC.Page.design({
 //            contentCheckboxKey: "isChecked"
 //        }),
         checkboxesView: SC.View.design({
-            layout: { left: 18, right: 0, bottom: 70, top: 10},
+            layout: { left: 18, right: 0, bottom: 80, top: 10},
             childViews: "form".w(),
             form: SC.FormView.design({
                 classNames: ["flot_human_population"],
@@ -85,8 +85,8 @@ FlotHumanPopulation.mainPage = SC.Page.design({
             })
         }),
         explanation: SC.LabelView.design({
-            layout: { left: 400, bottom: 0, right: 0, height: 20 },
-            value: 'Data from Wikipedia&#39;s <a href="http://en.wikipedia.org/wiki/World_population">World Population page</a>',
+            layout: { left: 40, bottom: 0, right: 0, height: 40 },
+            value: 'Data is from Wikipedia&#39;s <a href="http://en.wikipedia.org/wiki/World_population">World Population page</a>. This example is based on Flot&#39;s <a href="http://people.iola.dk/olau/flot/examples/turning-series.html">turning series on/off</a>.',
             escapeHTML: NO
         })
     })
