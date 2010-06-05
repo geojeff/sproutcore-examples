@@ -108,7 +108,7 @@ FlotOilSpills.mainPage = SC.Page.design({
 //        }),
         explanation: SC.LabelView.design({
             layout: { left: 40, bottom: 0, right: 0, height: 40 },
-            value: 'Data is from Wikipedia&#39;s <a href="http://en.wikipedia.org/wiki/List_of_oil_spills">List of Oil Spills page</a>.',
+            value: 'Data is from Wikipedia&#39;s <a href="http://en.wikipedia.org/wiki/List_of_oil_spills">List of Oil Spills page</a>. CSS styling is from <a href="http://frozencanuck.wordpress.com/2009/09/06/creating-a-simple-custom-list-item-view-part-1/">frozencanuck&#39;s blog page</a>.',
             escapeHTML: NO
         })
     })
