@@ -35,8 +35,9 @@ FlotOilSpills.graphController = SC.ArrayController.create(
 
         var options = SC.Object.create({
             legend: { position: 'nw' },
-            grid: { backgroundColor: { colors: ["#fff", "#eee"]}}, // not in original
+            //grid: { backgroundColor: { colors: ["#fff", "#eee"]}}, // not in original
             xaxis: { mode: 'time' },
+            grid: { hoverable: true, clickable: true },
         });
         this.set('options', options);
     },

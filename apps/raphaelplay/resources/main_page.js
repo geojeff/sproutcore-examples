@@ -57,14 +57,14 @@ RaphaelPlay.mainPage = SC.Page.design({
                                 st.animate({ fill: st.color, stroke: "#ccc" }, 500);
                                 st.toFront();
                                 r.safari();
-                                Raphael.sproutcoreController.selectAustralianState(stateID)
+                                Raphael.sproutcoreController.selectAustralianState(stateID);
                                 current = stateID;
                             };
                             st[0].onmouseout = function() {
                                 st.animate({ fill: "#333", stroke: "#666" }, 500);
                                 st.toFront();
                                 r.safari();
-                                Raphael.sproutcoreController.unselectAustralianState()
+                                Raphael.sproutcoreController.unselectAustralianState();
                             };
                             if (stateID == "tas") {
                                 st[0].onmouseover();
