@@ -36,7 +36,7 @@ FlotOilSpills.mainPage = SC.Page.design({
 //            }),
 //        }),
          spills: SC.ScrollView.design({
-             layout: { left: 40, right: 40, bottom: 70, top: 470},
+             layout: { left: 40, right: 40, bottom: 70, height: 300 },
              contentView: SC.ListView.design({ 
                  layout: { top: 0, bottom: 0, left: 0, right: 0 }, 
                  contentBinding: 'FlotOilSpills.spillController.arrangedObjects', 
@@ -108,7 +108,7 @@ FlotOilSpills.mainPage = SC.Page.design({
 //        }),
         explanation: SC.LabelView.design({
             layout: { left: 40, bottom: 0, right: 0, height: 40 },
-            value: 'Data is from Wikipedia&#39;s <a href="http://en.wikipedia.org/wiki/List_of_oil_spills">List of Oil Spills page</a>. This example is based on Flot&#39;s <a href="http://people.iola.dk/olau/flot/examples/turning-series.html">turning series on/off</a>.',
+            value: 'Data is from Wikipedia&#39;s <a href="http://en.wikipedia.org/wiki/List_of_oil_spills">List of Oil Spills page</a>.',
             escapeHTML: NO
         })
     })
