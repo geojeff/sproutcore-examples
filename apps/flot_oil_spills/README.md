@@ -32,7 +32,8 @@ Buildfile entries:
 * To pull in flot.  NOTE: load_fixtures is set to true so that fixtures data for the graph will be loaded. Also, Ace theming is used.
                             
         config :flot_oil_spills, :required => [:sproutcore, "sproutcore/forms", 'flot'], :load_fixtures => true, :theme => "sproutcore/ace"
-                                      ~
+
+
 ToDos
 -----
 
