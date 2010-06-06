@@ -5,6 +5,8 @@ This Sproutcore example uses the [Flot javascript library](http://code.google.co
 
 It shows data from from Wikipedia's [list of oil spills page](http://en.wikipedia.org/wiki/List_of_oil_spills).
 
+FlotOilSpills illustrates Flot's [interactivity](http://people.iola.dk/olau/flot/examples/interacting.html) functionality within Sproutcore.
+
 DEPENDS ON:
 -----------
 
@@ -29,3 +31,5 @@ Buildfile entries:
                             
         config :flot_oil_spills, :required => [:sproutcore, "sproutcore/forms", 'flot'], :load_fixtures => true, :theme => "sproutcore/ace"
                                       ~
+
+
