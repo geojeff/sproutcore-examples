@@ -39,7 +39,9 @@ ToDos
 
 * Add logic to control tooltip placement when near edges, to keep tooltip from extending out of the window.
 
-* When you click a list item, the graph should highlight the item on the graph (so far haven't learned how to make that plot.highlight() call).
+* When you click a list item, the graph should highlight the item on the graph (so far haven't learned how to make that plot.highlight() call).  
+  The Flot "interactivity example" shows small circular highlights associated with hovering, and also shows a permanent marker circle for the
+  clicked data item. The permanent highlight isn't appropriate for this app, but it would be nice for showing the current selection.
 
 
 
