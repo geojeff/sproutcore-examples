@@ -26,11 +26,10 @@ FlotOilSpills.mainPage = SC.Page.design({
         hovered_spill: SC.LabelView.design({
             //tagName: 'h1',
             textAlign: SC.ALIGN_CENTER,
-            classNames: "embossed".w(),
+            classNames: ["flot_oil_spill"]
             layout: { left: 300, right: 0, height: 50, top: 200 },
             valueBinding: "FlotOilSpills.graphController.tooltip"
         }),
-
 
         //graph: Flot.GraphView.design({
         graph: SC.View.extend(SC.ContentDisplay, {
@@ -39,19 +38,19 @@ FlotOilSpills.mainPage = SC.Page.design({
             optionsBinding: 'FlotOilSpills.graphController.options',
             contentBinding: 'FlotOilSpills.graphController.selection',
              
-            showTooltip: function(context, firstTime) {
+            renderTooltip: function(context, firstTime) {
                 tooltip = FlotOilSpills.graphController.tooltip;
                 //console.error(tooltip);
                 context = context.begin('div');
                 context = context.id('tooltip');
-                context = context.addStyle('position', 'absolute');
-                context = context.addStyle('display', 'none');
-                context = context.addStyle('top', "%@".fmt(tooltip.y+5));
-                context = context.addStyle('left', "%@".fmt(tooltip.x+5));
-                context = context.addStyle('border', '1px solid #fdd');
-                context = context.addStyle('padding', '2px');
-                context = context.addStyle('background-color', '#fee');
-                context = context.addStyle('opacity', 0.80);
+                context = context.addStyle('position', 'absolute')
+                                 .addStyle('display', 'none');
+                                 .addStyle('top', "%@".fmt(tooltip.y+5));
+                                 .addStyle('left', "%@".fmt(tooltip.x+5));
+                                 .addStyle('border', '1px solid #fdd');
+                                 .addStyle('padding', '2px');
+                                 .addStyle('background-color', '#fee');
+                                 .addStyle('opacity', 0.80);
                 context = context.push(tooltip.label);
                 context = context.end();
             },
@@ -87,7 +86,7 @@ FlotOilSpills.mainPage = SC.Page.design({
                                                 FlotOilSpills.graphController.setTooltip(item.pageX, item.pageY, oil_spill_name);
                                             }
                                             //FlotOilSpills.graphController.setTooltip(item.pageX, item.pageY, oil_spill_name + " of " + x + " = " + y);
-                                            FlotOilSpills.mainPage.mainPane.graph.showTooltip(context, firstTime);
+                                            FlotOilSpills.mainPage.mainPane.graph.renderTooltip(context, firstTime);
                                         }
                                     }
                                 } else {
@@ -100,8 +99,7 @@ FlotOilSpills.mainPage = SC.Page.design({
                             $(placeholder).bind("plotclick", function (event, pos, item) {
                                 if (item) {
                                     clicked_oil_spill = FlotOilSpills.spillController.objectAt(item.dataIndex);
-                                    FlotOilSpills.spillController.selectObject(clicked_oil_spill);
-                                    FlotOilSpills.mainPage.mainPane.spills.contentView.scrollToContentIndex(item.dataIndex);
+                                    FlotOilSpills.spillController.selectSpill(clicked_oil_spill);
                                     //FlotOilSpills.graphController.setDataPointClick(item.dataIndex, item.series.label);
                                     //$().highlight(item.series, item.datapoint);
                                 }
