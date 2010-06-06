@@ -58,8 +58,8 @@ FlotOilSpills.graphController = SC.ArrayController.create(
     },
 
     setTooltip: function(tooltip_x, tooltip_y, tooltip_label) {
-        //this.tooltip = SC.Object.create({ x: tooltip_x, y: tooltip_y, label: tooltip_label });
-        this.set('tooltip', tooltip_label);
+        this.tooltip = SC.Object.create({ x: tooltip_x, y: tooltip_y, label: tooltip_label });
+        //this.set('tooltip', tooltip_label);
         console.error(this.get('tooltip'));
     },
 

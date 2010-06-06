@@ -29,17 +29,10 @@ FlotOilSpills.mainPage = SC.Page.design({
             classNames: ["flot_oil_spill"]
             layout: { left: 300, right: 0, height: 50, top: 200 },
             valueBinding: "FlotOilSpills.graphController.tooltip"
-        }),
 
-        //graph: Flot.GraphView.design({
-        graph: SC.View.extend(SC.ContentDisplay, {
-            layout: { top: 50, right: 40, bottom: 400, left: 40 } ,
-            dataBinding: 'FlotOilSpills.graphController.selection',
-            optionsBinding: 'FlotOilSpills.graphController.options',
-            contentBinding: 'FlotOilSpills.graphController.selection',
-             
-            renderTooltip: function(context, firstTime) {
-                tooltip = FlotOilSpills.graphController.tooltip;
+            render: function(context, firstTime) {
+                tooltip = this.get('value');
+                //tooltip = FlotOilSpills.graphController.tooltip;
                 //console.error(tooltip);
                 context = context.begin('div');
                 context = context.id('tooltip');
@@ -54,7 +47,15 @@ FlotOilSpills.mainPage = SC.Page.design({
                 context = context.push(tooltip.label);
                 context = context.end();
             },
+        }),
 
+        //graph: Flot.GraphView.design({
+        graph: SC.View.extend(SC.ContentDisplay, {
+            layout: { top: 50, right: 40, bottom: 400, left: 40 } ,
+            dataBinding: 'FlotOilSpills.graphController.selection',
+            optionsBinding: 'FlotOilSpills.graphController.options',
+            contentBinding: 'FlotOilSpills.graphController.selection',
+             
             removeTooltip: function(context, firstTime) {
                 this.set('tooltip', NO);
             },
