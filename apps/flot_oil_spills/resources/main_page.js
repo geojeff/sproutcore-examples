@@ -10,7 +10,7 @@
 sc_require('flot.core.js');
 FlotOilSpills.mainPage = SC.Page.design({
     mainPane: SC.MainPane.design({
-        childViews: 'graphTitle hovered_spill graph spills explanation'.w(),
+        childViews: 'graphTitle graph spills explanation'.w(),
         graphTitle: SC.ToolbarView.design({
             layout: { top: 0, left: 0, right: 0, height: 36 },
             anchorLocation: SC.ANCHOR_TOP,
@@ -23,32 +23,6 @@ FlotOilSpills.mainPage = SC.Page.design({
             })
         }),
 
-        hovered_spill: SC.LabelView.design({
-            //tagName: 'h1',
-            textAlign: SC.ALIGN_CENTER,
-            classNames: ["flot_oil_spill"]
-            layout: { left: 300, right: 0, height: 50, top: 200 },
-            valueBinding: "FlotOilSpills.graphController.tooltip"
-
-            render: function(context, firstTime) {
-                tooltip = this.get('value');
-                //tooltip = FlotOilSpills.graphController.tooltip;
-                //console.error(tooltip);
-                context = context.begin('div');
-                context = context.id('tooltip');
-                context = context.addStyle('position', 'absolute')
-                                 .addStyle('display', 'none');
-                                 .addStyle('top', "%@".fmt(tooltip.y+5));
-                                 .addStyle('left', "%@".fmt(tooltip.x+5));
-                                 .addStyle('border', '1px solid #fdd');
-                                 .addStyle('padding', '2px');
-                                 .addStyle('background-color', '#fee');
-                                 .addStyle('opacity', 0.80);
-                context = context.push(tooltip.label);
-                context = context.end();
-            },
-        }),
-
         //graph: Flot.GraphView.design({
         graph: SC.View.extend(SC.ContentDisplay, {
             layout: { top: 50, right: 40, bottom: 400, left: 40 } ,
@@ -56,8 +30,25 @@ FlotOilSpills.mainPage = SC.Page.design({
             optionsBinding: 'FlotOilSpills.graphController.options',
             contentBinding: 'FlotOilSpills.graphController.selection',
              
+            showTooltip: function(x, y, contents) {
+                SC.RunLoop.begin();
+                $('<div id="tooltip">' + contents + '</div>').css( {
+                    position: 'absolute',
+                    display: 'none',
+                    top: y + 5,
+                    left: x + 5,
+                    border: '1px solid #fdd',
+                    padding: '2px',
+                    'background-color': '#fee',
+                    opacity: 0.80
+                }).appendTo("body").fadeIn(200);
+                SC.RunLoop.end();
+            },
+
             removeTooltip: function(context, firstTime) {
-                this.set('tooltip', NO);
+                SC.RunLoop.begin();
+                $("#tooltip").remove();
+                SC.RunLoop.end();
             },
 
             render: function(context, firstTime) {
@@ -67,7 +58,7 @@ FlotOilSpills.mainPage = SC.Page.design({
                     if((this.get('frame').width > 0) && (this.get('frame').height > 0)) {
                         if(this.get('data')) {
                             placeholder = this.get('layer');
-                            Flot.plot(this.get('layer'), this.get('data').toArray(), this.get('options')) ;
+                            Flot.plot(placeholder, this.get('data').toArray(), this.get('options')) ;
 
                             $(placeholder).bind("plothover", function (event, pos, item) {
                                 FlotOilSpills.graphController.setHoverPoint(pos.x.toFixed(2), pos.y.toFixed(2));
@@ -79,19 +70,12 @@ FlotOilSpills.mainPage = SC.Page.design({
                                         if (previousPoint != item.datapoint) {
                                             FlotOilSpills.graphController.setPreviousPoint(item.datapoint);
                                             FlotOilSpills.mainPage.mainPane.graph.removeTooltip();
-                                            var x = item.datapoint[0].toFixed(2), 
-                                                y = item.datapoint[1].toFixed(2);
+                                            FlotOilSpills.graphController.setTooltip(item);
                                             oil_spill_name = FlotOilSpills.spillController.getName(item.dataIndex);
-                                            // item.series.label is the name of the data series (handy if more than one series)
-                                            if (FlotOilSpills.graphController.tooltip !== oil_spill_name) {
-                                                FlotOilSpills.graphController.setTooltip(item.pageX, item.pageY, oil_spill_name);
-                                            }
-                                            //FlotOilSpills.graphController.setTooltip(item.pageX, item.pageY, oil_spill_name + " of " + x + " = " + y);
-                                            FlotOilSpills.mainPage.mainPane.graph.renderTooltip(context, firstTime);
+                                            FlotOilSpills.mainPage.mainPane.graph.showTooltip(item.pageX, item.pageY, oil_spill_name);
                                         }
                                     }
                                 } else {
-                                    FlotOilSpills.graphController.setTooltip(0, 0, 'Hover over points to see spill name here.');
                                     FlotOilSpills.mainPage.mainPane.graph.removeTooltip();
                                     FlotOilSpills.graphController.setPreviousPoint(null);
                                 }
@@ -99,9 +83,7 @@ FlotOilSpills.mainPage = SC.Page.design({
 
                             $(placeholder).bind("plotclick", function (event, pos, item) {
                                 if (item) {
-                                    clicked_oil_spill = FlotOilSpills.spillController.objectAt(item.dataIndex);
-                                    FlotOilSpills.spillController.selectSpill(clicked_oil_spill);
-                                    //FlotOilSpills.graphController.setDataPointClick(item.dataIndex, item.series.label);
+                                    FlotOilSpills.spillController.selectSpill(item.dataIndex);
                                     //$().highlight(item.series, item.datapoint);
                                 }
                             });
@@ -149,7 +131,61 @@ FlotOilSpills.mainPage = SC.Page.design({
                 }) ;
             },
         }),
+        spills: SC.ScrollView.design({
+            layout: { left: 40, right: 40, bottom: 70, height: 300 },
+            contentView: SC.ListView.design({ 
+                layout: { top: 0, bottom: 0, left: 0, right: 0 }, 
+                contentBinding: 'FlotOilSpills.spillController.arrangedObjects', 
+                selectionBinding:'FlotOilSpills.spillController.selection',                                                                                                                                                                                      
+                exampleView: FlotOilSpills.CustomListItemView, 
+                rowHeight: 45, 
+                rowSpacing: 0 
+            }), 
+        }),
+        explanation: SC.LabelView.design({
+            layout: { left: 40, bottom: 0, right: 0, height: 40 },
+            value: 'Data is from Wikipedia&#39;s <a href="http://en.wikipedia.org/wiki/List_of_oil_spills">List of Oil Spills page</a>. CSS styling is from <a href="http://frozencanuck.wordpress.com/2009/09/06/creating-a-simple-custom-list-item-view-part-1/">frozencanuck&#39;s blog page</a>.',
+            escapeHTML: NO
+        })
+    })
+});
 
+
+//        tooltip: SC.LabelView.design({
+//            //tagName: 'h1',
+//            textAlign: SC.ALIGN_CENTER,
+//            //classNames: ["tooltip"],
+//            //layout: { left: 300, right: 0, height: 50, top: 200 },
+//            layoutBinding: "FlotOilSpills.graphController.tooltipLayout",
+//            valueBinding: "FlotOilSpills.graphController.tooltip",
+//
+//            layerDidChange: function() {
+//                this.set('layerNeedsUpdate', YES);
+//                this.set('layerLocationNeedsUpdate', YES);
+//            }.observes('layer'),
+//
+//            render: function(context, firstTime) {
+//                tooltip = this.get('value');
+//                tooltipLayout = this.get('layout');
+//                //tooltip = FlotOilSpills.graphController.tooltip;
+//                //console.error(tooltip);
+//                console.error("%@,%@ %@".fmt(tooltipLayout.left+5, tooltipLayout.top+5, tooltip));
+//                context = context.begin('div');
+//                context = context.id('tooltip');
+//                context = context.addStyle('position', 'absolute')
+//                                 .addStyle('display', 'none')
+//                                 .addStyle('top', "%@".fmt(tooltipLayout.left+5))
+//                                 .addStyle('left', "%@".fmt(tooltipLayout.top+5))
+//                                 .addStyle('border', '1px solid #fdd')
+//                                 .addStyle('padding', '2px')
+//                                 .addStyle('background-color', '#fee')
+//                                 .addStyle('opacity', 0.80);
+//                context = context.push(tooltip.label);
+//                context = context.end();
+//                
+//                sc_super();
+//            }
+//        }),
 
 //        tooltips: SC.View.design({
 //            layout: { left: 50, right: 0, bottom: 340, top: 10},
@@ -166,27 +202,6 @@ FlotOilSpills.mainPage = SC.Page.design({
 //                })),
 //            })
 //        }),
-    
-
-//        spills: SC.ScrollView.design({
-//            layout: { left: 40, right: 40, bottom: 70, top: 470},
-//            backgroundColor: "white",
-//            contentView: SC.ListView.design({
-//                contentBinding: 'FlotOilSpills.spillController.arrangedObjects',
-//                contentValueKey: "name"
-//            }),
-//        }),
-        spills: SC.ScrollView.design({
-            layout: { left: 40, right: 40, bottom: 70, height: 300 },
-            contentView: SC.ListView.design({ 
-                layout: { top: 0, bottom: 0, left: 0, right: 0 }, 
-                contentBinding: 'FlotOilSpills.spillController.arrangedObjects', 
-                selectionBinding:'FlotOilSpills.spillController.selection',                                                                                                                                                                                      
-                exampleView: FlotOilSpills.CustomListItemView, 
-                rowHeight: 45, 
-                rowSpacing: 0 
-            }), 
-        }),
 //        spills: SC.TableView.design({
 //            layout: { left: 40, right: 40, bottom: 70, top: 470},
 //            backgroundColor: "white", 
@@ -222,10 +237,3 @@ FlotOilSpills.mainPage = SC.Page.design({
 //            exampleView: SC.TableRowView, 
 //            recordType: FlotOilSpills.oil_spill_data,
 //        }),
-        explanation: SC.LabelView.design({
-            layout: { left: 40, bottom: 0, right: 0, height: 40 },
-            value: 'Data is from Wikipedia&#39;s <a href="http://en.wikipedia.org/wiki/List_of_oil_spills">List of Oil Spills page</a>. CSS styling is from <a href="http://frozencanuck.wordpress.com/2009/09/06/creating-a-simple-custom-list-item-view-part-1/">frozencanuck&#39;s blog page</a>.',
-            escapeHTML: NO
-        })
-    })
-});

@@ -14,10 +14,9 @@ FlotOilSpills.graphController = SC.ArrayController.create(
         SC.Object.create({estimate: 'max', label: 'set1', data:[], bars: { show: true }, points: { show: true } })
     ],
 
-    hoverPoint: null,
     previousPoint: null,
-    clickedPoint: null,
     tooltip: 'Hover over points to see name of spill here.',
+    tooltipLayout: { left: 300, right: 0, height: 50, top: 200 },
 
     options: SC.Object.create({}),
 
@@ -40,7 +39,6 @@ FlotOilSpills.graphController = SC.ArrayController.create(
 
         var options = SC.Object.create({
             legend: { position: 'nw' },
-            //grid: { backgroundColor: { colors: ["#fff", "#eee"]}}, // not in original
             xaxis: { mode: 'time' },
             grid: { hoverable: true, clickable: true },
         });
@@ -49,22 +47,22 @@ FlotOilSpills.graphController = SC.ArrayController.create(
 
     getDataset: function(estimate) { return this.get('content').findProperty('estimate', estimate) },
 
-    setHoverPoint: function(hover_x, hover_y) {
-        this.hoverPoint = SC.Object.create({ x: hover_x, y: hover_y });
-    },
-
     setPreviousPoint: function(pp) {
         this.set('previousPoint', pp);
     },
 
-    setTooltip: function(tooltip_x, tooltip_y, tooltip_label) {
-        this.tooltip = SC.Object.create({ x: tooltip_x, y: tooltip_y, label: tooltip_label });
-        //this.set('tooltip', tooltip_label);
-        console.error(this.get('tooltip'));
-    },
+    setTooltip: function(item) {
+        var timestamp = item.datapoint[0], 
+            gallons = item.datapoint[1],
+            name = FlotOilSpills.spillController.getName(item.dataIndex);
 
-    setDataPointClick: function(clicked_index, clicked_series) {
-        this.clickedPoint = SC.Object.create({ index: clicked_index, series: clicked_series });
+        this.set('tooltip', name);
+
+        //var tooltipLayout = this.get('tooltipLayout');
+        //tooltipLayout.left = item.pageX / 2;
+        //tooltipLayout.top = item.pageY / 2;
+        //this.set('tooltipLayout', tooltipLayout);
+        //FlotOilSpills.mainPage.mainPane.tooltip.updateLayerLocationIfNeeded();
     },
 
     showTooltips: YES,
