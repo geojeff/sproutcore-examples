@@ -15,6 +15,8 @@ DEPENDS ON:
 I cloned the flot-integration code, which is a full Sproutcore project
 with Buildfile. I got the flot-integration demo working. Then I copied
 flot-integration/frameworks/flot into the frameworks dir of sproutcore-examples.
+
+Although, with this example, the graph view does not call FlotView in the flot-integration package, a view with that functionality is created in place.
     
 Buildfile entries:
 ------------------
@@ -31,5 +33,12 @@ Buildfile entries:
                             
         config :flot_oil_spills, :required => [:sproutcore, "sproutcore/forms", 'flot'], :load_fixtures => true, :theme => "sproutcore/ace"
                                       ~
+ToDos
+-----
+
+* Add logic to control tooltip placement when near edges, to keep tooltip from extending out of the window.
+
+* When you click a list item, the graph should highlight the item on the graph (so far haven't learned how to make that plot.highlight() call).
+
 
 
