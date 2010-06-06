@@ -15,11 +15,11 @@ FlotOilSpills.spillController = SC.ArrayController.create(
     selectSpill: function(spill_index) {
         // I thought the RunLoop calls were needed for immediacy, but something else,
         // probably Flot, is holding up this taking effect.
-        //SC.RunLoop.begin();
+        SC.RunLoop.begin();
         var selectedSpill = this.get('content').objectAt(spill_index);
         this.selectObject(selectedSpill);
         FlotOilSpills.mainPage.mainPane.spills.contentView.scrollToContentIndex(spill_index);
-        //SC.RunLoop.end();
+        SC.RunLoop.end();
     },
 
 });

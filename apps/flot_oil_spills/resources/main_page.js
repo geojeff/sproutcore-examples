@@ -80,10 +80,12 @@ FlotOilSpills.mainPage = SC.Page.design({
                             });
 
                             $(placeholder).bind("plotclick", function (event, pos, item) {
+                                SC.RunLoop.begin();
                                 if (item) {
                                     FlotOilSpills.spillController.selectSpill(item.dataIndex);
                                     //$().highlight(item.series, item.datapoint);
                                 }
+                                SC.RunLoop.end();
                             });
                         }
                     }
