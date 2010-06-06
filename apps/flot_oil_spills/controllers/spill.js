@@ -10,6 +10,8 @@
 FlotOilSpills.spillController = SC.ArrayController.create(
 /** @scope FlotOilSpills.spillController.prototype */ {
 
+    getName: function(index) { return this.get('content').objectAt(index).get('name') },
+
 });
 
 

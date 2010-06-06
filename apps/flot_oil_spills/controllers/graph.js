@@ -14,6 +14,11 @@ FlotOilSpills.graphController = SC.ArrayController.create(
         SC.Object.create({estimate: 'max', label: 'set1', data:[], bars: { show: true }, points: { show: true } })
     ],
 
+    hoverPoint: null,
+    previousPoint: null,
+    clickedPoint: null,
+    tooltip: 'Hover over points to see name of spill here.',
+
     options: SC.Object.create({}),
 
     addData: function(oil_spill_data) {
@@ -44,27 +49,33 @@ FlotOilSpills.graphController = SC.ArrayController.create(
 
     getDataset: function(estimate) { return this.get('content').findProperty('estimate', estimate) },
 
-//    isMinimumTonnageShowing: YES,
-//    minimumTonnageObserver: function() {
-//        dataset = this.getDataset('min');
-//        if (this.get('isMinimumTonnageShowing') === NO ) {
-//            this.deselectObject(dataset);
-//        } else {
-//            this.selectObject(dataset, extend = YES);
-//        }
-//        FlotOilSpills.mainPage.mainPane.graph.plotDataDidChange()
-//    }.observes('isMinimumTonnageShowing'),
+    setHoverPoint: function(hover_x, hover_y) {
+        this.hoverPoint = SC.Object.create({ x: hover_x, y: hover_y });
+    },
 
-    isMaximumTonnageShowing: YES,
-    maximumTonnageObserver: function() {
-        dataset = this.getDataset('max');
-        if (this.get('isMaximumTonnageShowing') === NO ) {
-            this.deselectObject(dataset);
+    setPreviousPoint: function(pp) {
+        this.set('previousPoint', pp);
+    },
+
+    setTooltip: function(tooltip_x, tooltip_y, tooltip_label) {
+        //this.tooltip = SC.Object.create({ x: tooltip_x, y: tooltip_y, label: tooltip_label });
+        this.set('tooltip', tooltip_label);
+        console.error(this.get('tooltip'));
+    },
+
+    setDataPointClick: function(clicked_index, clicked_series) {
+        this.clickedPoint = SC.Object.create({ index: clicked_index, series: clicked_series });
+    },
+
+    showTooltips: YES,
+    showTooltipsObserver: function() {
+        if (this.get('showTooltips') === NO ) {
+
         } else {
-            this.selectObject(dataset, extend = YES);
+
         }
         FlotOilSpills.mainPage.mainPane.graph.plotDataDidChange()
-    }.observes('isMaximumTonnageShowing'),
+    }.observes('showTooltips'),
 
 });
 
