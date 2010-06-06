@@ -61,8 +61,6 @@ FlotOilSpills.mainPage = SC.Page.design({
                             Flot.plot(placeholder, this.get('data').toArray(), this.get('options')) ;
 
                             $(placeholder).bind("plothover", function (event, pos, item) {
-                                FlotOilSpills.graphController.setHoverPoint(pos.x.toFixed(2), pos.y.toFixed(2));
-                            
                                 previousPoint = FlotOilSpills.graphController.get('previousPoint');
 
                                 if (FlotOilSpills.graphController.showTooltips === YES) {
