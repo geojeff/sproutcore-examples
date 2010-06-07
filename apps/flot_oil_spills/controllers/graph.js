@@ -47,10 +47,6 @@ FlotOilSpills.graphController = SC.ArrayController.create(
 
     getDataset: function(estimate) { return this.get('content').findProperty('estimate', estimate) },
 
-    setPreviousPoint: function(pp) {
-        this.set('previousPoint', pp);
-    },
-
     setTooltip: function(item) {
         var timestamp = item.datapoint[0], 
             gallons = item.datapoint[1],

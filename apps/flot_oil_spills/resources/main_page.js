@@ -52,7 +52,9 @@ FlotOilSpills.mainPage = SC.Page.design({
 
             render: function(context, firstTime) {
                 sc_super();
+
                 var previousPoint = null;
+                var currentPoint = null;
 
                 if(this.get('layer') && this.get('isVisibleInWindow')) {
                     if((this.get('frame').width > 0) && (this.get('frame').height > 0)) {
@@ -61,8 +63,7 @@ FlotOilSpills.mainPage = SC.Page.design({
                             var plot = Flot.plot(placeholder, this.get('data').toArray(), this.get('options')) ;
 
                             $(placeholder).bind("plothover", function (event, pos, item) {
-                                //var previousPoint = FlotOilSpills.graphController.get('previousPoint');
-
+                                SC.RunLoop.begin();
                                 if (FlotOilSpills.graphController.showTooltips === YES) {
                                     if (item) {
                                         if (SC.none(previousPoint) || ((previousPoint[0] !== item.datapoint[0]) && (previousPoint[1] !== item.datapoint[1]))) {
@@ -73,12 +74,12 @@ FlotOilSpills.mainPage = SC.Page.design({
                                             var oil_spill_name = FlotOilSpills.spillController.getName(item.dataIndex);
                                             FlotOilSpills.mainPage.mainPane.graph.showTooltip(item.pageX, item.pageY, oil_spill_name);
                                         }
+                                    } else {
+                                        FlotOilSpills.mainPage.mainPane.graph.removeTooltip();
+                                        previousPoint = item.datapoint;
                                     }
-                                } else {
-                                    FlotOilSpills.mainPage.mainPane.graph.removeTooltip();
-                                    //FlotOilSpills.graphController.setPreviousPoint(null);
-                                    previousPoint = item.datapoint;
                                 }
+                                SC.RunLoop.end();
                             });
 
                             $(placeholder).bind("plotclick", function (event, pos, item) {
@@ -92,7 +93,6 @@ FlotOilSpills.mainPage = SC.Page.design({
                             $(placeholder).bind("mouseout", function (event, pos, item) {
                                 SC.RunLoop.begin();
                                 FlotOilSpills.mainPage.mainPane.graph.removeTooltip();
-                                console.error('here');
                                 SC.RunLoop.end();
                             });
                         }
