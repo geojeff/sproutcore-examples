@@ -47,36 +47,37 @@ FlotOilSpills.mainPage = SC.Page.design({
             },
 
             removeTooltip: function(context, firstTime) {
-                SC.RunLoop.begin();
                 $("#tooltip").remove();
-                SC.RunLoop.end();
             },
 
             render: function(context, firstTime) {
                 sc_super();
-                 
+                var previousPoint = null;
+
                 if(this.get('layer') && this.get('isVisibleInWindow')) {
                     if((this.get('frame').width > 0) && (this.get('frame').height > 0)) {
                         if(this.get('data')) {
-                            placeholder = this.get('layer');
+                            var placeholder = this.get('layer');
                             var plot = Flot.plot(placeholder, this.get('data').toArray(), this.get('options')) ;
 
                             $(placeholder).bind("plothover", function (event, pos, item) {
-                                previousPoint = FlotOilSpills.graphController.get('previousPoint');
+                                //var previousPoint = FlotOilSpills.graphController.get('previousPoint');
 
                                 if (FlotOilSpills.graphController.showTooltips === YES) {
                                     if (item) {
-                                        if (previousPoint != item.datapoint) {
-                                            FlotOilSpills.graphController.setPreviousPoint(item.datapoint);
+                                        if (SC.none(previousPoint) || ((previousPoint[0] !== item.datapoint[0]) && (previousPoint[1] !== item.datapoint[1]))) {
+                                            //FlotOilSpills.graphController.setPreviousPoint(item.datapoint);
+                                            previousPoint = item.datapoint;
                                             FlotOilSpills.mainPage.mainPane.graph.removeTooltip();
                                             FlotOilSpills.graphController.setTooltip(item);
-                                            oil_spill_name = FlotOilSpills.spillController.getName(item.dataIndex);
+                                            var oil_spill_name = FlotOilSpills.spillController.getName(item.dataIndex);
                                             FlotOilSpills.mainPage.mainPane.graph.showTooltip(item.pageX, item.pageY, oil_spill_name);
                                         }
                                     }
                                 } else {
                                     FlotOilSpills.mainPage.mainPane.graph.removeTooltip();
-                                    FlotOilSpills.graphController.setPreviousPoint(null);
+                                    //FlotOilSpills.graphController.setPreviousPoint(null);
+                                    previousPoint = item.datapoint;
                                 }
                             });
 
@@ -85,6 +86,13 @@ FlotOilSpills.mainPage = SC.Page.design({
                                 if (item) {
                                     FlotOilSpills.spillController.selectSpill(plot, item);
                                 }
+                                SC.RunLoop.end();
+                            });
+
+                            $(placeholder).bind("mouseout", function (event, pos, item) {
+                                SC.RunLoop.begin();
+                                FlotOilSpills.mainPage.mainPane.graph.removeTooltip();
+                                console.error('here');
                                 SC.RunLoop.end();
                             });
                         }
