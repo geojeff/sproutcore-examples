@@ -11,7 +11,7 @@ FlotOilSpills.graphController = SC.ArrayController.create(
 /** @scope FlotOilSpills.graphController.prototype */ {
 
     content: [
-        SC.Object.create({estimate: 'max', label: 'set1', data:[], bars: { show: true }, points: { show: true } })
+        SC.Object.create({estimate: 'max', label: 'set1', data:[], bars: { show: true }, points: { show: true }, highlight: YES })
     ],
 
     previousPoint: null,
@@ -40,7 +40,7 @@ FlotOilSpills.graphController = SC.ArrayController.create(
         var options = SC.Object.create({
             legend: { position: 'nw' },
             xaxis: { mode: 'time' },
-            grid: { hoverable: true, clickable: true },
+            grid: { hoverable: true, clickable: true, autoHighlight: YES },
         });
         this.set('options', options);
     },

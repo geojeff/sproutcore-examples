@@ -29,6 +29,7 @@ FlotOilSpills.mainPage = SC.Page.design({
             dataBinding: 'FlotOilSpills.graphController.selection',
             optionsBinding: 'FlotOilSpills.graphController.options',
             contentBinding: 'FlotOilSpills.graphController.selection',
+            selectionBinding: 'FlotOilSpills.spillController.selectedIndex',
              
             showTooltip: function(x, y, contents) {
                 SC.RunLoop.begin();
@@ -58,7 +59,7 @@ FlotOilSpills.mainPage = SC.Page.design({
                     if((this.get('frame').width > 0) && (this.get('frame').height > 0)) {
                         if(this.get('data')) {
                             placeholder = this.get('layer');
-                            Flot.plot(placeholder, this.get('data').toArray(), this.get('options')) ;
+                            var plot = Flot.plot(placeholder, this.get('data').toArray(), this.get('options')) ;
 
                             $(placeholder).bind("plothover", function (event, pos, item) {
                                 previousPoint = FlotOilSpills.graphController.get('previousPoint');
@@ -82,8 +83,7 @@ FlotOilSpills.mainPage = SC.Page.design({
                             $(placeholder).bind("plotclick", function (event, pos, item) {
                                 SC.RunLoop.begin();
                                 if (item) {
-                                    FlotOilSpills.spillController.selectSpill(item.dataIndex);
-                                    //$().highlight(item.series, item.datapoint);
+                                    FlotOilSpills.spillController.selectSpill(plot, item);
                                 }
                                 SC.RunLoop.end();
                             });
@@ -139,7 +139,9 @@ FlotOilSpills.mainPage = SC.Page.design({
                 selectionBinding:'FlotOilSpills.spillController.selection',                                                                                                                                                                                      
                 exampleView: FlotOilSpills.CustomListItemView, 
                 rowHeight: 45, 
-                rowSpacing: 0 
+                rowSpacing: 0,
+                actOnSelect: YES,
+                action: FlotOilSpills.spillController.listItemSelected
             }), 
         }),
         explanation: SC.LabelView.design({
@@ -168,8 +170,6 @@ FlotOilSpills.mainPage = SC.Page.design({
 //                tooltip = this.get('value');
 //                tooltipLayout = this.get('layout');
 //                //tooltip = FlotOilSpills.graphController.tooltip;
-//                //console.error(tooltip);
-//                console.error("%@,%@ %@".fmt(tooltipLayout.left+5, tooltipLayout.top+5, tooltip));
 //                context = context.begin('div');
 //                context = context.id('tooltip');
 //                context = context.addStyle('position', 'absolute')
