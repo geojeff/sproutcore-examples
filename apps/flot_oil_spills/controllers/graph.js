@@ -14,8 +14,6 @@ FlotOilSpills.graphController = SC.ArrayController.create(
         SC.Object.create({estimate: 'max', label: 'set1', data:[], points: { show: true }, highlight: YES })
     ],
 
-    tooltip: '',
-
     options: SC.Object.create({}),
 
     addData: function(oil_spill_data) {
@@ -44,14 +42,6 @@ FlotOilSpills.graphController = SC.ArrayController.create(
     },
 
     getDataset: function(estimate) { return this.get('content').findProperty('estimate', estimate) },
-
-    setTooltip: function(item) {
-        var timestamp = item.datapoint[0], 
-            gallons = item.datapoint[1],
-            name = FlotOilSpills.spillController.getName(item.dataIndex);
-
-        this.set('tooltip', name);
-    },
 
     showTooltips: YES,
     showTooltipsObserver: function() {

@@ -72,7 +72,6 @@ FlotOilSpills.mainPage = SC.Page.design({
                                         if (SC.none(previousPoint) || ((previousPoint[0] !== item.datapoint[0]) && (previousPoint[1] !== item.datapoint[1]))) {
                                             previousPoint = item.datapoint;
                                             FlotOilSpills.mainPage.mainPane.graph.removeTooltip();
-                                            FlotOilSpills.graphController.setTooltip(item);
                                             var oil_spill_name = FlotOilSpills.spillController.getName(item.dataIndex);
                                             var plot_x = item.pageX - plot.offset().left;
                                             var plot_width = plot.width();
