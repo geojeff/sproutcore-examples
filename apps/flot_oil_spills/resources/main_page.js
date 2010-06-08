@@ -75,6 +75,7 @@ FlotOilSpills.mainPage = SC.Page.design({
                                             var oil_spill_name = FlotOilSpills.spillController.getName(item.dataIndex);
                                             var series = plot.getData();
                                             points = series[0].datapoints.points;
+                                            console.error(points.length);
                                             max_x_point_x = points[(points.length/2)-2]
                                             max_x_point_y = points[(points.length/2)-1]
                                             point_offset = plot.pointOffset({x: max_x_point_x, y: max_x_point_y});

@@ -31,7 +31,7 @@ FlotOilSpills.graphController = SC.ArrayController.create(
 
         series.objectAt(0).set('color', 1 );
 
-        this.set('content', data);
+        this.set('content', series);
 
         this.selectObjects(series);
 
