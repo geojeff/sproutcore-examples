@@ -30,6 +30,7 @@ FlotOilSpills.mainPage = SC.Page.design({
             optionsBinding: 'FlotOilSpills.graphController.options',
             contentBinding: 'FlotOilSpills.graphController.selection',
             selectionBinding: 'FlotOilSpills.spillController.selectedIndex',
+            plot: null,
              
             showTooltip: function(x, y, contents) {
                 SC.RunLoop.begin();
@@ -62,6 +63,7 @@ FlotOilSpills.mainPage = SC.Page.design({
 
                             // This variable, plot, could be passed to functions in here if needed.
                             var plot = Flot.plot(placeholder, this.get('data').toArray(), this.get('options')) ;
+                            this.set('plot', plot);
 
                             $(placeholder).bind("plothover", function (event, pos, item) {
                                 SC.RunLoop.begin();
@@ -157,6 +159,8 @@ FlotOilSpills.mainPage = SC.Page.design({
                 exampleView: FlotOilSpills.CustomListItemView, 
                 rowHeight: 45, 
                 rowSpacing: 0,
+                actOnSelect: YES,
+                action: 'FlotOilSpills.spillController.listItemSelected'
             }), 
         }),
         explanation: SC.LabelView.design({

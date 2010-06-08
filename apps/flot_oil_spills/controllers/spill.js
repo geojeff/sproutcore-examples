@@ -11,6 +11,7 @@ FlotOilSpills.spillController = SC.ArrayController.create(
 /** @scope FlotOilSpills.spillController.prototype */ {
 
     selected_spill: null,
+    highlighted_spill_index: null,
 
     getName: function(index) { return this.get('content').objectAt(index).get('name') },
 
@@ -20,13 +21,20 @@ FlotOilSpills.spillController = SC.ArrayController.create(
         this.set('selected_spill', selectedSpill);
     },
 
-//    listItemSelected: function() {
-//        obj = FlotOilSpills.spillController.get('selection');
-//        if (! SC.none(obj)) {
-//            idx = FlotOilSpills.spillController.indexOf(obj);
-//            console.error(idx);
-//        }
-//    }.observes(this.selected_spill)
+    listItemSelected: function() {
+        var selection_set = FlotOilSpills.mainPage.mainPane.spills.contentView.get('selection');
+        var item = selection_set.firstObject();
+        //console.error(selection_set.toString());
+        if (! SC.none(item)) {
+            var index = FlotOilSpills.spillController.indexOf(item);
+            var current_index = this.get('highlighted_spill_index');
+            if (!SC.none(current_index)) {
+                FlotOilSpills.mainPage.mainPane.graph.plot.unhighlight(0, current_index);
+            }
+            FlotOilSpills.mainPage.mainPane.graph.plot.highlight(0, index);
+            this.set('highlighted_spill_index', index);
+        }
+    }.observes('FlotOilSpills.mainPage.mainPane.spills.contentView.selection')
 
 });
 
