@@ -73,7 +73,18 @@ FlotOilSpills.mainPage = SC.Page.design({
                                             FlotOilSpills.mainPage.mainPane.graph.removeTooltip();
                                             FlotOilSpills.graphController.setTooltip(item);
                                             var oil_spill_name = FlotOilSpills.spillController.getName(item.dataIndex);
-                                            FlotOilSpills.mainPage.mainPane.graph.showTooltip(item.pageX, item.pageY, oil_spill_name);
+                                            var series = plot.getData();
+                                            points = series[0].datapoints.points;
+                                            max_x_point_x = points[(points.length/2)-2]
+                                            max_x_point_y = points[(points.length/2)-1]
+                                            point_offset = plot.pointOffset({x: max_x_point_x, y: max_x_point_y});
+                                            max_x = point_offset.left;
+                                            var x = item.pageX;
+                                            console.error(x, max_x);
+                                            if ((max_x - x) > (max_x * 0.10)) {
+                                                x = x - (max_x * 0.10);
+                                            }
+                                            FlotOilSpills.mainPage.mainPane.graph.showTooltip(x, item.pageY, oil_spill_name);
                                         }
                                     } else {
                                         FlotOilSpills.mainPage.mainPane.graph.removeTooltip();

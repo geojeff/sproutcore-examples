@@ -11,12 +11,10 @@ FlotOilSpills.graphController = SC.ArrayController.create(
 /** @scope FlotOilSpills.graphController.prototype */ {
 
     content: [
-        SC.Object.create({estimate: 'max', label: 'set1', data:[], bars: { show: true }, points: { show: true }, highlight: YES })
+        SC.Object.create({estimate: 'max', label: 'set1', data:[], points: { show: true }, highlight: YES })
     ],
 
-    previousPoint: null,
-    tooltip: 'Hover over points to see name of spill here.',
-    tooltipLayout: { left: 300, right: 0, height: 50, top: 200 },
+    tooltip: '',
 
     options: SC.Object.create({}),
 
@@ -53,12 +51,6 @@ FlotOilSpills.graphController = SC.ArrayController.create(
             name = FlotOilSpills.spillController.getName(item.dataIndex);
 
         this.set('tooltip', name);
-
-        //var tooltipLayout = this.get('tooltipLayout');
-        //tooltipLayout.left = item.pageX / 2;
-        //tooltipLayout.top = item.pageY / 2;
-        //this.set('tooltipLayout', tooltipLayout);
-        //FlotOilSpills.mainPage.mainPane.tooltip.updateLayerLocationIfNeeded();
     },
 
     showTooltips: YES,
