@@ -19,21 +19,21 @@ FlotOilSpills.graphController = SC.ArrayController.create(
     options: SC.Object.create({}),
 
     addData: function(oil_spill_data) {
-        var data = this.get('content').copy();
+        var series = this.get('content').copy();
 
         for (i = 0; i < oil_spill_data.get('length'); i++) {
             var tonnes = oil_spill_data.objectAt(i).get('max_tonnage');
             var barrels = Math.round(tonnes / 0.136)
             var gallons = barrels * 42
-            data.objectAt(0).get('data').pushObject([oil_spill_data.objectAt(i).get('timestamp'), gallons]);
+            series.objectAt(0).get('data').pushObject([oil_spill_data.objectAt(i).get('timestamp'), gallons]);
         }
-        data.objectAt(0).set('label', 'Maximum estimate, or known size (gallons)');
+        series.objectAt(0).set('label', 'Maximum estimate, or known size (gallons)');
 
-        data.objectAt(0).set('color', 1 );
+        series.objectAt(0).set('color', 1 );
 
         this.set('content', data);
 
-        this.selectObjects(data);
+        this.selectObjects(series);
 
         var options = SC.Object.create({
             legend: { position: 'nw' },
