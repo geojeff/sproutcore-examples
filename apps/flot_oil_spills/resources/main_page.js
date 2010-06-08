@@ -68,22 +68,16 @@ FlotOilSpills.mainPage = SC.Page.design({
                                 if (FlotOilSpills.graphController.showTooltips === YES) {
                                     if (item) {
                                         if (SC.none(previousPoint) || ((previousPoint[0] !== item.datapoint[0]) && (previousPoint[1] !== item.datapoint[1]))) {
-                                            //FlotOilSpills.graphController.setPreviousPoint(item.datapoint);
                                             previousPoint = item.datapoint;
                                             FlotOilSpills.mainPage.mainPane.graph.removeTooltip();
                                             FlotOilSpills.graphController.setTooltip(item);
                                             var oil_spill_name = FlotOilSpills.spillController.getName(item.dataIndex);
-                                            var series = plot.getData();
-                                            points = series[0].datapoints.points;
-                                            console.error(points.length);
-                                            max_x_point_x = points[(points.length/2)-2]
-                                            max_x_point_y = points[(points.length/2)-1]
-                                            point_offset = plot.pointOffset({x: max_x_point_x, y: max_x_point_y});
-                                            max_x = point_offset.left;
+                                            var plot_x = item.pageX - plot.offset().left;
+                                            var plot_width = plot.width();
+                                            var margin = plot_width * 0.05
                                             var x = item.pageX;
-                                            console.error(x, max_x);
-                                            if ((max_x - x) > (max_x * 0.10)) {
-                                                x = x - (max_x * 0.10);
+                                            if (plot_x >= (plot_width - margin)) {
+                                                x = x - margin;
                                             }
                                             FlotOilSpills.mainPage.mainPane.graph.showTooltip(x, item.pageY, oil_spill_name);
                                         }
@@ -99,7 +93,7 @@ FlotOilSpills.mainPage = SC.Page.design({
                                 SC.RunLoop.begin();
                                 if (item) {
                                     FlotOilSpills.spillController.selectSpill(item);
-                                    plot.highlight(item.series, spill_item.datapoint);
+                                    plot.highlight(item.series, item.datapoint);
                                     FlotOilSpills.mainPage.mainPane.spills.contentView.scrollToContentIndex(item.dataIndex);
                                 }
                                 SC.RunLoop.end();
@@ -163,14 +157,13 @@ FlotOilSpills.mainPage = SC.Page.design({
                 exampleView: FlotOilSpills.CustomListItemView, 
                 rowHeight: 45, 
                 rowSpacing: 0,
-                actOnSelect: YES,
-                action: FlotOilSpills.spillController.listItemSelected
             }), 
         }),
         explanation: SC.LabelView.design({
             layout: { left: 40, bottom: 0, right: 0, height: 40 },
             value: 'Data is from Wikipedia&#39;s <a href="http://en.wikipedia.org/wiki/List_of_oil_spills">List of Oil Spills page</a>. CSS styling is from <a href="http://frozencanuck.wordpress.com/2009/09/06/creating-a-simple-custom-list-item-view-part-1/">frozencanuck&#39;s blog page</a>.',
             escapeHTML: NO
-        })
+        }),
+
     })
 });
