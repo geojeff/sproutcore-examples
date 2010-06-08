@@ -5,7 +5,7 @@
 // License:   Licensed under MIT license (see license.js)
 // App:       FlotOilSpills
 // ==========================================================================
-/*globals FlotOilSpills Table Forms */
+/*globals FlotOilSpills Forms */
 
 sc_require('flot.core.js');
 FlotOilSpills.mainPage = SC.Page.design({
@@ -54,7 +54,8 @@ FlotOilSpills.mainPage = SC.Page.design({
                 sc_super();
 
                 var previousPoint = null;
-                var currentPoint = null;
+                //var currentPoint = null;
+                //if (this.timer){ this.timer.invalidate(); this.timer.destroy(); }
 
                 if(this.get('layer') && this.get('isVisibleInWindow')) {
                     if((this.get('frame').width > 0) && (this.get('frame').height > 0)) {
@@ -76,7 +77,7 @@ FlotOilSpills.mainPage = SC.Page.design({
                                         }
                                     } else {
                                         FlotOilSpills.mainPage.mainPane.graph.removeTooltip();
-                                        previousPoint = item.datapoint;
+                                        previousPoint = null;
                                     }
                                 }
                                 SC.RunLoop.end();

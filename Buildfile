@@ -19,7 +19,7 @@ config :flot_setting_options, :required => [:sproutcore, 'flot']
 config :flot_dual_axis, :required => [:sproutcore, 'flot'], :load_fixtures => true
 config :flot_carbon_dioxide, :required => [:sproutcore, 'flot'], :load_fixtures => true
 config :flot_human_population, :required => [:sproutcore, "sproutcore/forms", 'flot'], :load_fixtures => true, :theme => "sproutcore/ace"
-config :flot_oil_spills, :required => [:sproutcore, "sproutcore/table", "sproutcore/forms", 'flot'], :load_fixtures => true, :theme => "sproutcore/ace"
+config :flot_oil_spills, :required => [:sproutcore, :flot, "sproutcore/forms" ], :load_fixtures => true, :theme => "sproutcore/ace"
 config :raphaelplay, :required => [:sproutcore, :raphael], :load_fixtures => true
 config :test_controls, :required => [:sproutcore, "sproutcore/forms", "sproutcore/animation"], :theme => "sproutcore/ace"
 config :phone_controls, :required => [:sproutcore, "sproutcore/forms", "sproutcore/animation"], :theme => "sproutcore/ace"
