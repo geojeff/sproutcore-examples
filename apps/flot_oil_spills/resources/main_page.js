@@ -54,13 +54,13 @@ FlotOilSpills.mainPage = SC.Page.design({
                 sc_super();
 
                 var previousPoint = null;
-                //var currentPoint = null;
-                //if (this.timer){ this.timer.invalidate(); this.timer.destroy(); }
 
                 if(this.get('layer') && this.get('isVisibleInWindow')) {
                     if((this.get('frame').width > 0) && (this.get('frame').height > 0)) {
                         if(this.get('data')) {
                             var placeholder = this.get('layer');
+
+                            // This variable, plot, could be passed to functions in here if needed.
                             var plot = Flot.plot(placeholder, this.get('data').toArray(), this.get('options')) ;
 
                             $(placeholder).bind("plothover", function (event, pos, item) {
@@ -86,7 +86,9 @@ FlotOilSpills.mainPage = SC.Page.design({
                             $(placeholder).bind("plotclick", function (event, pos, item) {
                                 SC.RunLoop.begin();
                                 if (item) {
-                                    FlotOilSpills.spillController.selectSpill(plot, item);
+                                    FlotOilSpills.spillController.selectSpill(item);
+                                    plot.highlight(item.series, spill_item.datapoint);
+                                    FlotOilSpills.mainPage.mainPane.spills.contentView.scrollToContentIndex(item.dataIndex);
                                 }
                                 SC.RunLoop.end();
                             });
