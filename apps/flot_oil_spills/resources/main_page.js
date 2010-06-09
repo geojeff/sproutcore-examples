@@ -62,7 +62,7 @@ FlotOilSpills.mainPage = SC.Page.design({
                             var placeholder = this.get('layer');
 
                             // This variable, plot, could be passed to functions in here if needed.
-                            var plot = Flot.plot(placeholder, this.get('data').toArray(), this.get('options')) ;
+                            var plot = Flot.plot(placeholder, this.get('data').toArray(), this.get('options'));
                             this.set('plot', plot);
 
                             $(placeholder).bind("plothover", function (event, pos, item) {
