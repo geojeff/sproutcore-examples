@@ -37,6 +37,9 @@ Buildfile entries:
 ToDos
 -----
 
+* A debugging console.error() message in the code to fix the x for rightmost points, showed that there are two calls to render for each mouseover triggering
+  a tooltip. Furthermore, the message also showed that on one call the plotOffset is 61 and the second time 101, which is odd, indeed.
+
 * [DONE] Add logic to control tooltip placement when near edges, to keep tooltip from extending out of the window.
 
 * [DONE (highlights working)] When you click a list item, the graph should highlight the item on the graph (so far haven't learned how to make that plot.highlight() call).  
