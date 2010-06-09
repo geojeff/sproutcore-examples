@@ -7,7 +7,6 @@
 // ==========================================================================
 /*globals FlotOilSpills Forms */
 
-sc_require('flot.core.js');
 FlotOilSpills.mainPage = SC.Page.design({
     mainPane: SC.MainPane.design({
         childViews: 'graphTitle graph directions spills explanation'.w(),
