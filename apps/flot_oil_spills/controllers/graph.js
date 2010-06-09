@@ -53,7 +53,7 @@ FlotOilSpills.graphController = SC.ArrayController.create(
 
         var pointRadius = series[series_index].points.radius + series[series_index].points.lineWidth / 2;
         canvascontext.lineWidth = pointRadius;
-        canvascontext.strokeStyle = $.color.parse(series[series_index].color).scale('a', 0.5).toString();
+        canvascontext.strokeStyle = $.color.parse('rgb(255, 100, 123)').scale('a', 0.5).toString();
         var radius = 5 * pointRadius;
         canvascontext.beginPath();
         canvascontext.arc(x_plot, y_plot, radius, 0, 2 * Math.PI, false);
@@ -71,7 +71,7 @@ FlotOilSpills.graphController = SC.ArrayController.create(
         }
         series.objectAt(0).set('label', 'Maximum estimate, or known size (gallons)');
 
-        series.objectAt(0).set('color', 1 );
+        series.objectAt(0).set('color', 'rgb(128, 100, 123)' );
 
         this.set('content', series);
 

@@ -19,7 +19,7 @@ div.custom-list-item-view div.row.standard {
 }
 
 div.custom-list-item-view div.row.selected {
-    background-color: #99CCCC;
+    background-color: rgb(255, 100, 123);
 }
 
 div.custom-list-item-view div.top {
