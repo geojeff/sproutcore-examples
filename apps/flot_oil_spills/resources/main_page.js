@@ -10,7 +10,7 @@
 sc_require('flot.core.js');
 FlotOilSpills.mainPage = SC.Page.design({
     mainPane: SC.MainPane.design({
-        childViews: 'graphTitle graph spills explanation'.w(),
+        childViews: 'graphTitle graph directions spills explanation'.w(),
         graphTitle: SC.ToolbarView.design({
             layout: { top: 0, left: 0, right: 0, height: 36 },
             anchorLocation: SC.ANCHOR_TOP,
@@ -25,7 +25,7 @@ FlotOilSpills.mainPage = SC.Page.design({
 
         //graph: Flot.GraphView.design({
         graph: SC.View.extend(SC.ContentDisplay, {
-            layout: { top: 50, right: 40, bottom: 400, left: 40 } ,
+            layout: { top: 50, right: 40, bottom: 430, left: 40 } ,
             dataBinding: 'FlotOilSpills.graphController.selection',
             optionsBinding: 'FlotOilSpills.graphController.options',
             contentBinding: 'FlotOilSpills.graphController.selection',
@@ -149,8 +149,12 @@ FlotOilSpills.mainPage = SC.Page.design({
                 }) ;
             },
         }),
+        directions: SC.LabelView.design({
+            layout: { left: 40, bottom: 380, right: 0, height: 40 },
+            value: 'Hover over data points on the graph for oil spill names. Click data points to identify spills in the list. Click spills in the list to highlight data points on the graph.'
+        }),
         spills: SC.ScrollView.design({
-            layout: { left: 40, right: 40, bottom: 70, height: 300 },
+            layout: { left: 40, right: 40, bottom: 70, height: 320 },
             contentView: SC.ListView.design({ 
                 layout: { top: 0, bottom: 0, left: 0, right: 0 }, 
                 contentBinding: 'FlotOilSpills.spillController.arrangedObjects', 
@@ -164,7 +168,7 @@ FlotOilSpills.mainPage = SC.Page.design({
         }),
         explanation: SC.LabelView.design({
             layout: { left: 40, bottom: 0, right: 0, height: 40 },
-            value: 'Data is from Wikipedia&#39;s <a href="http://en.wikipedia.org/wiki/List_of_oil_spills">List of Oil Spills page</a>. CSS styling is from <a href="http://frozencanuck.wordpress.com/2009/09/06/creating-a-simple-custom-list-item-view-part-1/">frozencanuck&#39;s blog page</a>.',
+            value: 'Data is from Wikipedia&#39;s <a href="http://en.wikipedia.org/wiki/List_of_oil_spills">List of Oil Spills page</a>. CSS styling is from <a href="http://frozencanuck.wordpress.com/2009/09/06/creating-a-simple-custom-list-item-view-part-1/">frozencanuck&#39;s blog page</a>. The graph illustrates interactivity like this <a href="http://people.iola.dk/olau/flot/examples/interacting.html">Flot example</a>.',
             escapeHTML: NO
         }),
 
