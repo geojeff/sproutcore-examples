@@ -37,14 +37,14 @@ Buildfile entries:
 ToDos
 -----
 
-* Basic highlighting works (see DONE todo), but the default Flot highlighting takes a data point marker and makes it slightly larger, which is too hard
-  to see. Perhaps the internal Flot function for this can be overridden, so that highlights can be larger, in brighter, or higher contrast color.
-
 * The sc_require in main_page.js is not getting Flot included properly (this app has its own flot view, and does not use the view in flot-integration).
   Errors show with sc-server and sc-build, but Flot still works. Something wrong on the require though.
 
 * A debugging console.error() message in the code to fix the x for rightmost points, showed that there are two calls to render for each mouseover triggering
   a tooltip. Furthermore, the message also showed that on one call the plotOffset is 61 and the second time 101, which is odd, indeed.
+
+* [DONE (with drawOverlay hook function)] Basic highlighting works (see DONE todo), but the default Flot highlighting takes a data point marker and makes it slightly larger, which is too hard
+  to see. Perhaps the internal Flot function for this can be overridden, so that highlights can be larger, in brighter, or higher contrast color.
 
 * [DONE] Add logic to control tooltip placement when near edges, to keep tooltip from extending out of the window.
 
