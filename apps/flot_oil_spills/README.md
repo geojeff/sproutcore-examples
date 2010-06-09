@@ -37,6 +37,9 @@ Buildfile entries:
 ToDos
 -----
 
+* When a selection is active, and the highlight circle is drawn, a window resize will clear the highlight, and it is not redrawn after completion of the
+  window resizing. 
+
 * The sc_require in main_page.js is not getting Flot included properly (this app has its own flot view, and does not use the view in flot-integration).
   Errors show with sc-server and sc-build, but Flot still works. Something wrong on the require though.
 
