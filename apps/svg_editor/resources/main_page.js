@@ -13,7 +13,8 @@ ScalableVectorGraphicsEditor.mainPage = SC.Page.design({
 
         editor: SC.WebView.extend(SC.ContentDisplay, {
             layout: { width: 750, height: 650 },
-            value: 'http://svg-edit.googlecode.com/svn/tags/stable/editor/svg-editor.html',
+            //value: 'http://svg-edit.googlecode.com/svn/tags/stable/editor/svg-editor.html',
+            value: 'http://www.geojeff.com/svg-edit-read-only/editor/svg-editor.html',
         }),
 
     })
