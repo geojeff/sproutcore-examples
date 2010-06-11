@@ -65,7 +65,9 @@ FlotOilSpills.graphController = SC.ArrayController.create(
 
         for (i = 0; i < oil_spill_data.get('length'); i++) {
             var tonnes = oil_spill_data.objectAt(i).get('max_tonnage');
-            var barrels = Math.round(tonnes / 0.136)
+            //var barrels = Math.round(tonnes / 0.136)
+            // or you can also multiply tonnes by 307.86 directly, for gallons (http://www.bp.com/conversionfactors.jsp)
+            var barrels = Math.round(tonnes * 7.33)
             var gallons = barrels * 42
             series.objectAt(0).get('data').pushObject([oil_spill_data.objectAt(i).get('timestamp'), gallons]);
         }
