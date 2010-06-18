@@ -87,7 +87,7 @@ TestControls.groups = [
                 show: "scroll_page"
             })
         ]
-    }),
+    })
 ]
       
 TestControls.groupsController = SC.ArrayController.create({
