@@ -74,5 +74,5 @@ FlotOilSpills.oil_spill_reference.FIXTURES = [
     { 'guid': 69,  'text': 'Russell Berman (Sunday, 18 November 2005). "Greenpoint, Maspeth Residents Lobby To Get 55-Year-Old Oil Spill Cleaned Up". TheNew York Sun. Retrieved 2 June 2010.' },
     { 'guid': 70,  'text': 'Harry R. Carter (2003). "Oil and California’s Seabirds: An Overview" (PDF). Marine Ornithology 31: p. 2. Retrieved 2 June 2010.' },
     { 'guid': 71,  'text': '"Presidente Rivera Spill – June 24, 1989". University of Delaware Sea Grant Program. 2004. Retrieved 2 June 2010.' },
-    { 'guid': 72,  'text': 'Rintoul, William; Hodgson, Susan F. (1990). Drilling Through Time: 75 Years with California&#39;s Division of Oil and Gas. Sacramento: Department of Conservation, Division of Oil and Gas. pp. 13-15. ISBN 096271240X.' },
-    ]
+    { 'guid': 72,  'text': 'Rintoul, William; Hodgson, Susan F. (1990). Drilling Through Time: 75 Years with California&#39;s Division of Oil and Gas. Sacramento: Department of Conservation, Division of Oil and Gas. pp. 13-15. ISBN 096271240X.' }
+    ];
