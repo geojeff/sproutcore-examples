@@ -33,7 +33,7 @@ PhoneControls.CategoryDisplay = SC.View.design({
     childViews: "contentView".w(),
     contentView: SC.ContainerView.design({ 
         layout: { left: 0, top: 0, right: 0, bottom: 0 },
-        nowShowingBinding: "PhoneControls.categoryDisplayController.nowShowing",
+        nowShowingBinding: "PhoneControls.categoryDisplayController.nowShowing"
         })
     });
 
