@@ -86,5 +86,5 @@ FlotOilSpills.oil_spill_data.FIXTURES = [
     { 'guid': 80,  'timestamp':  -631130400000, 'name': 'Greenpoint, Brooklyn oil spill', 'location': 'United States, Newtown Creek, Greenpoint, Brooklyn, New York', 'min_tonnage': 55200, 'max_tonnage': 97400, 'references': [69] },
     { 'guid': 81,  'timestamp': -1035828000000, 'name': 'SS Frank H. Buck / SS President Coolidge collision', 'location': 'United States, San Francisco Bay, California', 'min_tonnage': 8870, 'max_tonnage': 8870, 'references': [64, 70] },
     { 'guid': 82,  'timestamp':   614667600000, 'name': 'Presidente Rivera', 'location': 'United States, Delaware River, Marcus Hook, Pennsylvania', 'min_tonnage': 993, 'max_tonnage': 993, 'references': [71] },
-    { 'guid': 83,  'timestamp': -1918749600000, 'name': 'Lakeview Gusher', 'location': 'United States, Kern County, California', 'min_tonnage': 1230000, 'max_tonnage': 1230000, 'references': [72] },
-    ]
+    { 'guid': 83,  'timestamp': -1918749600000, 'name': 'Lakeview Gusher', 'location': 'United States, Kern County, California', 'min_tonnage': 1230000, 'max_tonnage': 1230000, 'references': [72] }
+    ];
