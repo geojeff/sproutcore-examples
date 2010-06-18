@@ -2,7 +2,7 @@
 // Project:   FlotCarbonDioxide - mainPage
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals FlotCarbonDioxide */
+/*globals FlotCarbonDioxide Flot */
 
 FlotCarbonDioxide.mainPage = SC.Page.design({
 
@@ -16,7 +16,7 @@ FlotCarbonDioxide.mainPage = SC.Page.design({
                 layout: { centerY: 0, height: 24, left: 8, width: 500 },
                 controlSize: SC.LARGE_CONTROL_SIZE,
                 fontWeight: SC.BOLD_WEIGHT,
-                value: 'Full Mauna Loa Carbon Dioxide Record',
+                value: 'Full Mauna Loa Carbon Dioxide Record'
             })
         }),
         graph: Flot.GraphView.design({

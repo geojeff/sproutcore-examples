@@ -17,6 +17,6 @@ FlotCarbonDioxide.co2data = SC.Record.extend(
   averageCO2: SC.Record.attr(Number),
   interpolatedCO2: SC.Record.attr(Number),
   trendCO2: SC.Record.attr(Number),
-  numberOfDays: SC.Record.attr(Number),
+  numberOfDays: SC.Record.attr(Number)
 
-}) ;
+});

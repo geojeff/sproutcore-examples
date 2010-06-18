@@ -20,7 +20,7 @@ FlotCarbonDioxide.graphController = SC.ArrayController.create(
     addData: function(co2data) {
         var data = this.get('content').copy();
 
-        for (i = 0; i < co2data.get('length'); i++) {
+        for (var i = 0; i < co2data.get('length'); i++) {
             data.objectAt(0).get('data').pushObject([co2data.objectAt(i).get('timestamp'), co2data.objectAt(i).get('interpolatedCO2')]);
             data.objectAt(1).get('data').pushObject([co2data.objectAt(i).get('timestamp'), co2data.objectAt(i).get('trendCO2')]);
         }
@@ -35,7 +35,7 @@ FlotCarbonDioxide.graphController = SC.ArrayController.create(
         var options = SC.Object.create({
             legend: { position: 'se' },
             grid: { backgroundColor: { colors: ["#fff", "#eee"]}}, // not in original
-            xaxis: { mode: 'time' },
+            xaxis: { mode: 'time' }
             // yaxis: { min: 0 },
             // NOTE: had to set color, otherwise color undefined in drawGrid() for axis.options.color, in jquery.flot.js
             // y2axis: { color: "#000", tickColor: "#000", tickFormatter: function (v, axis) { return v.toFixed(axis.tickDecimals) +"€" }}
