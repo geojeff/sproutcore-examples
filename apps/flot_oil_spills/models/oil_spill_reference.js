@@ -11,6 +11,6 @@
 FlotOilSpills.oil_spill_reference = SC.Record.extend(
 /** @scope FlotOilSpills.oil_spill_reference.prototype */ {
 
-  text: SC.Record.attr(String),
+  text: SC.Record.attr(String)
 
 }) ;

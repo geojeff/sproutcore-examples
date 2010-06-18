@@ -1,17 +1,27 @@
+// ==========================================================================                                                                                                                                                                                             
+// Project:   SproutCore - JavaScript Application Framework
+// Copyright: ©2006-2010 Sprout Systems, Inc. and contributors.
+//            Portions ©2008-2010 Apple Inc. All rights reserved.
+// License:   Licensed under MIT license (see license.js)
+// App:       FlotOilSpills
+// ==========================================================================
+/*globals FlotOilSpills Forms */
+
 FlotOilSpills.CustomListItemView = SC.View.extend(SC.ContentDisplay, {
     classNames: ['custom-list-item-view'],
     contentDisplayProperties: 'name location min_tonnage max_tonnage timestamp'.w(),
     displayProperties: 'isSelected'.w(),
 
     numberFormat: function(nStr,prefix) {
-        var prefix = prefix || '';
+        prefix = prefix || '';
         nStr += '';
-        x = nStr.split('.');
-        x1 = x[0];
-        x2 = x.length > 1 ? '.' + x[1] : '';
+        var x = nStr.split('.');
+        var x1 = x[0];
+        var x2 = x.length > 1 ? '.' + x[1] : '';
         var rgx = /(\d+)(\d{3})/;
-        while (rgx.test(x1))
+        while (rgx.test(x1)) {
             x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        }
         return prefix + x1 + x2;
     },
 
