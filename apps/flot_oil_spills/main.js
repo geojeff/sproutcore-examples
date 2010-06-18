@@ -13,7 +13,7 @@ FlotOilSpills.main = function main() {
     FlotOilSpills.graphController.addData(oil_spill_data);
     FlotOilSpills.spillController.set('content', oil_spill_data);
 
-	var query = SC.Query.local(FlotOilSpills.oil_spill_references, { orderBy: 'guid' });
+	query = SC.Query.local(FlotOilSpills.oil_spill_references, { orderBy: 'guid' });
 	var oil_spill_references = FlotOilSpills.store.find(query);
 
     FlotOilSpills.referenceController.set('content', oil_spill_references);
