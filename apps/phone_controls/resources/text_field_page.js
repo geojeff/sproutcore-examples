@@ -39,13 +39,13 @@ PhoneControls.textFieldPage = SC.View.design({
       spacer1: SC.View.design({
         layout: { left: 0, width: 150, height: 54, centerY: 0},
         value: "",
-        flowSize: { widthPercentage: 1 },
+        flowSize: { widthPercentage: 1 }
       }), 
     
       header2: SC.LabelView.design({
         layout: { width: 400, height: 44 },
         classNames: "header".w(),
-        value: "Text Fields, with spacer",
+        value: "Text Fields, with spacer"
       }),
     
       normal2: SC.FormView.row(SC.TextFieldView.design({
@@ -56,14 +56,14 @@ PhoneControls.textFieldPage = SC.View.design({
 
       spacer2: SC.View.design({
         layout: { left: 0, width: 150, height: 4, centerY: 0},
-        value: "",
+        value: ""
       }), 
     
       disabled2: SC.FormView.row(SC.TextFieldView.design({
         layout: { left: 0, width: 150, height: 44, centerY: 0},
         isEnabled: NO,
         value: "Disabled"
-      }), { classNames: ["first"] }),
+      }), { classNames: ["first"] })
     })
   })
 });
