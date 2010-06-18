@@ -13,7 +13,7 @@ FlotOilSpills.spillController = SC.ArrayController.create(
     selected_spill: null,
     highlighted_spill_index: null,
 
-    getName: function(index) { return this.get('content').objectAt(index).get('name') },
+    getName: function(index) { return this.get('content').objectAt(index).get('name'); },
 
     selectSpill: function(spill_item) {
         var selectedSpill = this.get('content').objectAt(spill_item.dataIndex);
