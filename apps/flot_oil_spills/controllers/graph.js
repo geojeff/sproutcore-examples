@@ -44,8 +44,9 @@ FlotOilSpills.graphController = SC.ArrayController.create(
         var axisx = series[series_index].xaxis, 
             axisy = series[series_index].yaxis;
 
-        if (x < axisx.min || x > axisx.max || y < axisy.min || y > axisy.max)
+        if (x < axisx.min || x > axisx.max || y < axisy.min || y > axisy.max) {
             return;
+        }
                      
         var offset = plot.getPlotOffset();
         var x_plot = axisx.p2c(x) + offset.left;
@@ -63,12 +64,12 @@ FlotOilSpills.graphController = SC.ArrayController.create(
     addData: function(oil_spill_data) {
         var series = this.get('content').copy();
 
-        for (i = 0; i < oil_spill_data.get('length'); i++) {
+        for (var i = 0; i < oil_spill_data.get('length'); i++) {
             var tonnes = oil_spill_data.objectAt(i).get('max_tonnage');
             //var barrels = Math.round(tonnes / 0.136)
             // or you can also multiply tonnes by 307.86 directly, for gallons (http://www.bp.com/conversionfactors.jsp)
-            var barrels = Math.round(tonnes * 7.33)
-            var gallons = barrels * 42
+            var barrels = Math.round(tonnes * 7.33);
+            var gallons = barrels * 42;
             series.objectAt(0).get('data').pushObject([oil_spill_data.objectAt(i).get('timestamp'), gallons]);
         }
         series.objectAt(0).set('label', 'Maximum estimate, or known size (gallons)');
@@ -83,12 +84,12 @@ FlotOilSpills.graphController = SC.ArrayController.create(
             legend: { position: 'nw' },
             xaxis: { mode: 'time' },
             grid: { hoverable: true, clickable: true, autoHighlight: YES, backgroundColor: { colors: ["#fff", "#eee"]}},
-            hooks: { drawOverlay: [this.get('highlightHook')] },
+            hooks: { drawOverlay: [this.get('highlightHook')] }
         });
         this.set('options', options);
     },
 
-    getDataset: function(estimate) { return this.get('content').findProperty('estimate', estimate) },
+    getDataset: function(estimate) { return this.get('content').findProperty('estimate', estimate); },
 
     showTooltips: YES,
     showTooltipsObserver: function() {
@@ -97,8 +98,8 @@ FlotOilSpills.graphController = SC.ArrayController.create(
         } else {
 
         }
-        FlotOilSpills.mainPage.mainPane.graph.plotDataDidChange()
-    }.observes('showTooltips'),
+        FlotOilSpills.mainPage.mainPane.graph.plotDataDidChange();
+    }.observes('showTooltips')
 
 });
 
