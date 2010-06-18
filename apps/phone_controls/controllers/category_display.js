@@ -16,5 +16,5 @@ PhoneControls.categoryDisplayController = SC.ObjectController.create(
   delayShow: function() {
     // wait a moment before loading to let things finish...
     this.invokeLater(this.set, 50, "nowShowing", PhoneControls.mainPage.get(this.get("show")) || "welcome");
-  }.observes("show"),
-}) ;
+  }.observes("show")
+});

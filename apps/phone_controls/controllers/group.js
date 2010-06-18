@@ -9,5 +9,5 @@
 PhoneControls.groupController = SC.ObjectController.create(
 /** @scope PhoneControls.groupController.prototype */ {
   contentBinding: "PhoneControls.groupsController.selection",
-  contentBindingDefault: SC.Binding.single(),
-}) ;
+  contentBindingDefault: SC.Binding.single()
+});
