@@ -12,35 +12,35 @@ PhoneControls.groups = [
         categories: [
             SC.Object.create({
                 name: "Buttons",
-                show: "buttons_page",
+                show: "buttons_page"
                 }),
             SC.Object.create({
                 name: "Checkboxes",
-                show: "checkboxes_page",
+                show: "checkboxes_page"
                 }),
             SC.Object.create({
                 name: "Progress",
-                show: "progress_page",
+                show: "progress_page"
                 }),
             SC.Object.create({
                 name: "Radio",
-                show: "radio_page",
+                show: "radio_page"
                 }),
             SC.Object.create({
                 name: "Segmented Button",
-                show: "segmented_page",
+                show: "segmented_page"
                 }),
             SC.Object.create({
                 name: "Select Button",
-                show: "select_page",
+                show: "select_page"
                 }),
             SC.Object.create({
                 name: "Sliders",
-                show: "sliders_page",
+                show: "sliders_page"
                 }),
             SC.Object.create({
                 name: "Tabbed View",
-                show: "tab_page",
+                show: "tab_page"
                 })
         ]
     }),
@@ -50,7 +50,7 @@ PhoneControls.groups = [
         categories: [
             SC.Object.create({
                 name: "List",
-                show: "list_page",
+                show: "list_page"
             })
         ]
     }),
@@ -60,7 +60,7 @@ PhoneControls.groups = [
         categories: [
             SC.Object.create({
                 name: "Text Field",
-                show: "text_field_page",
+                show: "text_field_page"
             })
         ]
     }),
@@ -70,8 +70,8 @@ PhoneControls.groups = [
         categories: [
             SC.Object.create({
                 name: "Flow Layout",
-                show: "flow_layout_page",
-            }),
+                show: "flow_layout_page"
+            })
         ]
     }),
       
@@ -80,13 +80,13 @@ PhoneControls.groups = [
         categories: [
             SC.Object.create({
                 name: "Simple",
-                show: "scroll_page",
+                show: "scroll_page"
             })
         ]
-    }),
-]
+    })
+];
       
 PhoneControls.categoriesController = SC.ArrayController.create({
-    contentBinding: "PhoneControls.groupController.categories",
+    contentBinding: "PhoneControls.groupController.categories"
 });
  
