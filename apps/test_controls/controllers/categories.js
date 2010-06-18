@@ -88,7 +88,7 @@ TestControls.groups = [
             })
         ]
     })
-]
+];
       
 TestControls.groupsController = SC.ArrayController.create({
 });
