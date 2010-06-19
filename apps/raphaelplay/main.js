@@ -9,7 +9,7 @@ RaphaelPlay.main = function main() {
 
 	var query = SC.Query.local(RaphaelPlay.australianState, { orderBy: 'name' });
 	var australianStates = RaphaelPlay.store.find(query);
-
+	
     RaphaelPlay.australianStatesController.set('content', australianStates);
 
 };

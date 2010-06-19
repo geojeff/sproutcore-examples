@@ -43,8 +43,9 @@ RaphaelPlay.mainPage = SC.Page.design({
                 
                 var australianStates = this.get('content');
 
-                if (australianStates !== null) {
+                if (!SC.none(australianStates)) {
 				    var current = null;
+				    var animation_style = { fill: "#333", stroke: "#666" };
 				
                     australianStates.forEach(function(australianState) {
                         var stateID = australianState.get('guid');
@@ -53,7 +54,7 @@ RaphaelPlay.mainPage = SC.Page.design({
 					    (function(st, stateID) {
                             st[0].style.cursor = "pointer";
                             st[0].onmouseover = function() {
-                                current && aus[current].animate({ fill: "#333", stroke: "#666" }, 500); 
+								if (current !== null) { aus[current].animate(animation_style, 500); } 
                                 st.animate({ fill: st.color, stroke: "#ccc" }, 500);
                                 st.toFront();
                                 r.safari();
@@ -66,7 +67,7 @@ RaphaelPlay.mainPage = SC.Page.design({
                                 r.safari();
                                 Raphael.sproutcoreController.unselectAustralianState();
                             };
-                            if (stateID == "tas") {
+                            if (stateID === "tas") {
                                 st[0].onmouseover();
                             }
                         })(aus[stateID], stateID);
@@ -89,9 +90,9 @@ RaphaelPlay.mainPage = SC.Page.design({
             var population = '';
 
             var selectionSet = this.get('content');
-            if (selectionSet !== null) {
+            if (!SC.none(selectionSet)) {
                 var selectedRecord = selectionSet.firstObject();
-                if (selectedRecord !== null) {
+                if (!SC.none(selectedRecord)) {
                     name = selectedRecord.get('name');
                     description = selectedRecord.get('description');
                     population = selectedRecord.get('population');
