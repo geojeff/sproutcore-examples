@@ -20,7 +20,7 @@ FlotDualAxis.graphController = SC.ArrayController.create(
     addData: function(rates, prices) {
         var data = this.get('content').copy();
 
-        for (i = 0; i < prices.get('length'); i++) {
+        for (var i = 0; i < prices.get('length'); i++) {
             data.objectAt(0).get('data').pushObject([prices.objectAt(i).get('epoch'), prices.objectAt(i).get('price')]);
         }
         data.objectAt(0).set('label', 'Oil Price ($)');
@@ -42,7 +42,7 @@ FlotDualAxis.graphController = SC.ArrayController.create(
             xaxis: { mode: 'time' },
             yaxis: { min: 0 },
             // NOTE: had to set color, otherwise color undefined in drawGrid() for axis.options.color, in jquery.flot.js
-            y2axis: { color: "#000", tickColor: "#000", tickFormatter: function (v, axis) { return v.toFixed(axis.tickDecimals) +"€" }}
+            y2axis: { color: "#000", tickColor: "#000", tickFormatter: function (v, axis) { return v.toFixed(axis.tickDecimals) +"€"; }}
         });
         this.set('options', options);
     }

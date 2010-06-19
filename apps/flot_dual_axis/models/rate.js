@@ -12,6 +12,6 @@ FlotDualAxis.rate = SC.Record.extend(
 /** @scope FlotDualAxis.rate.prototype */ {
 
   epoch: SC.Record.attr(Number),
-  rate: SC.Record.attr(Number),
+  rate: SC.Record.attr(Number)
 
-}) ;
+});

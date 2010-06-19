@@ -10,7 +10,7 @@ FlotDualAxis.main = function main() {
 	var query = SC.Query.local(FlotDualAxis.rate, { orderBy: 'epoch' });
 	var rates = FlotDualAxis.store.find(query);
 
-	var query = SC.Query.local(FlotDualAxis.price, { orderBy: 'epoch' });
+	query = SC.Query.local(FlotDualAxis.price, { orderBy: 'epoch' });
 	var prices = FlotDualAxis.store.find(query);
 
     FlotDualAxis.graphController.addData(rates, prices);

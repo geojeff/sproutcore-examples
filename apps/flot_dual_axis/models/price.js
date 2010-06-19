@@ -12,6 +12,6 @@ FlotDualAxis.price = SC.Record.extend(
 /** @scope FlotDualAxis.price.prototype */ {
 
   epoch: SC.Record.attr(Number),
-  price: SC.Record.attr(Number),
+  price: SC.Record.attr(Number)
 
 }) ;
