@@ -15,17 +15,17 @@ FlotSettingOptions.graphController = SC.ArrayController.create(
 
     addData: function() {
         var d1 = [];
-        for (var i = 0; i < Math.PI * 2; i += 0.25)
+        for (var i = 0; i < Math.PI * 2; i += 0.25) {
             d1.push([i, Math.sin(i)]);
-
+        }
         var d2 = [];
-        for (var i = 0; i < Math.PI * 2; i += 0.25)
+        for (i = 0; i < Math.PI * 2; i += 0.25) {
             d2.push([i, Math.cos(i)]);
-
+        }
         var d3 = [];
-        for (var i = 0; i < Math.PI * 2; i += 0.1)
+        for (i = 0; i < Math.PI * 2; i += 0.1) {
             d3.push([i, Math.tan(i)]);
-                                
+        }
         var data = this.get('content').copy();
         data.pushObject(SC.Object.create({label: 'sin(x)', data: d1 }));
         data.pushObject(SC.Object.create({label: 'cos(x)', data: d2 }));

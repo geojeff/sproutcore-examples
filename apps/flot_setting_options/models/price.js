@@ -12,6 +12,6 @@ FlotSettingOptions.price = SC.Record.extend(
 /** @scope FlotSettingOptions.price.prototype */ {
 
   epoch: SC.Record.attr(Number),
-  price: SC.Record.attr(Number),
+  price: SC.Record.attr(Number)
 
-}) ;
+});

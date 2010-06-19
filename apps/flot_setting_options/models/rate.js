@@ -12,6 +12,6 @@ FlotSettingOptions.rate = SC.Record.extend(
 /** @scope FlotSettingOptions.rate.prototype */ {
 
   epoch: SC.Record.attr(Number),
-  rate: SC.Record.attr(Number),
+  rate: SC.Record.attr(Number)
 
-}) ;
+});

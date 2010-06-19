@@ -2,7 +2,7 @@
 // Project:   FlotSettingOptions - mainPage
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals FlotSettingOptions */
+/*globals FlotSettingOptions Flot */
 
 FlotSettingOptions.mainPage = SC.Page.design({
 
@@ -16,7 +16,7 @@ FlotSettingOptions.mainPage = SC.Page.design({
                 layout: { centerY: 0, height: 24, left: 8, width: 500 },
                 controlSize: SC.LARGE_CONTROL_SIZE,
                 fontWeight: SC.BOLD_WEIGHT,
-                value: 'Flot Setting Options Example',
+                value: 'Flot Setting Options Example'
             })
         }),
         graph: Flot.GraphView.design({
