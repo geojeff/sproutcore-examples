@@ -46,12 +46,12 @@ ScalableVectorGraphicsEditor.mainPage = SC.Page.design({
                     streams: SC.FormView.row(SC.CheckboxView.design({
                         layout: {width: 150, height: 24},
                         controlSize: SC.SMALL_CONTROL_SIZE,
-                        valueBinding: 'ScalableVectorGraphicsEditor.mapController.isStreamsDataShowing',
+                        valueBinding: 'ScalableVectorGraphicsEditor.mapController.isStreamsDataShowing'
                     })),
                     water_features: SC.FormView.row(SC.CheckboxView.design({
                         layout: {width: 150, height: 24},
                         controlSize: SC.SMALL_CONTROL_SIZE,
-                        valueBinding: 'ScalableVectorGraphicsEditor.mapController.isWaterFeaturesDataShowing',
+                        valueBinding: 'ScalableVectorGraphicsEditor.mapController.isWaterFeaturesDataShowing'
                     })),
                     vegetation: SC.FormView.row(SC.CheckboxView.design({
                         layout: {width: 150, height: 24},

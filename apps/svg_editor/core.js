@@ -11,6 +11,6 @@ ScalableVectorGraphicsEditor = SC.Application.create(
   /** @scope ScalableVectorGraphicsEditor.prototype */ {
 
   NAMESPACE: 'ScalableVectorGraphicsEditor',
-  VERSION: '0.1.0',
+  VERSION: '0.1.0'
 
-}) ;
+});
