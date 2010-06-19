@@ -19,6 +19,6 @@ FlotHumanPopulation.human_population_data = SC.Record.extend(
   europe: SC.Record.attr(Number),
   latin_america: SC.Record.attr(Number),
   northern_america: SC.Record.attr(Number),
-  oceania: SC.Record.attr(Number),
+  oceania: SC.Record.attr(Number)
 
-}) ;
+});

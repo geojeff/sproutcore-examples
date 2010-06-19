@@ -15,5 +15,5 @@ FlotHumanPopulation.human_population_data.FIXTURES = [
     { 'guid':  9,  'timestamp':   788940000000, 'year': 1995, 'world': 5674, 'africa': 707, 'asia': 3430, 'europe': 727, 'latin_america': 481, 'northern_america': 299, 'oceania': 29 },
     { 'guid': 10,  'timestamp':   946706400000, 'year': 2000, 'world': 6070, 'africa': 796, 'asia': 3680, 'europe': 728, 'latin_america': 520, 'northern_america': 316, 'oceania': 31 },
     { 'guid': 11,  'timestamp':  1104559200000, 'year': 2005, 'world': 6454, 'africa': 888, 'asia': 3917, 'europe': 725, 'latin_america': 558, 'northern_america': 332, 'oceania': 33 },
-    { 'guid': 12,  'timestamp':  1199167200000, 'year': 2008, 'world': 6707, 'africa': 973, 'asia': 4054, 'europe': 732, 'latin_america': 577, 'northern_america': 337, 'oceania': 34 },
-    ]
+    { 'guid': 12,  'timestamp':  1199167200000, 'year': 2008, 'world': 6707, 'africa': 973, 'asia': 4054, 'europe': 732, 'latin_america': 577, 'northern_america': 337, 'oceania': 34 }
+    ];

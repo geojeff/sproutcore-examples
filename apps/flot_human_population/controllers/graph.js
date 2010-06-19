@@ -25,7 +25,7 @@ FlotHumanPopulation.graphController = SC.ArrayController.create(
     addData: function(human_population_data) {
         var data = this.get('content').copy();
 
-        for (i = 0; i < human_population_data.get('length'); i++) {
+        for (var i = 0; i < human_population_data.get('length'); i++) {
             data.objectAt(0).get('data').pushObject([human_population_data.objectAt(i).get('timestamp'), human_population_data.objectAt(i).get('world')]);
             data.objectAt(1).get('data').pushObject([human_population_data.objectAt(i).get('timestamp'), human_population_data.objectAt(i).get('africa')]);
             data.objectAt(2).get('data').pushObject([human_population_data.objectAt(i).get('timestamp'), human_population_data.objectAt(i).get('asia')]);
@@ -57,89 +57,89 @@ FlotHumanPopulation.graphController = SC.ArrayController.create(
         var options = SC.Object.create({
             legend: { position: 'nw' },
             grid: { backgroundColor: { colors: ["#fff", "#eee"]}}, // not in original
-            xaxis: { mode: 'time' },
+            xaxis: { mode: 'time' }
         });
         this.set('options', options);
     },
 
-    getDataset: function(area) { return this.get('content').findProperty('area', area) },
+    getDataset: function(area) { return this.get('content').findProperty('area', area); },
 
     isWorldDataShowing: YES,
     worldDataObserver: function() {
-        dataset = this.getDataset('wo');
+        var dataset = this.getDataset('wo');
         if (this.get('isWorldDataShowing') === NO ) {
             this.deselectObject(dataset);
         } else {
-            this.selectObject(dataset, extend = YES);
+            this.selectObject(dataset, YES);
         }
-        FlotHumanPopulation.mainPage.mainPane.graph.plotDataDidChange()
+        FlotHumanPopulation.mainPage.mainPane.graph.plotDataDidChange();
     }.observes('isWorldDataShowing'),
 
     isAfricaDataShowing: YES,
     africaDataObserver: function() {
-        dataset = this.getDataset('af');
+        var dataset = this.getDataset('af');
         if (this.get('isAfricaDataShowing') === NO ) {
             this.deselectObject(dataset);
         } else {
-            this.selectObject(dataset, extend = YES);
+            this.selectObject(dataset, YES);
         }
-        FlotHumanPopulation.mainPage.mainPane.graph.plotDataDidChange()
+        FlotHumanPopulation.mainPage.mainPane.graph.plotDataDidChange();
     }.observes('isAfricaDataShowing'),
 
     isAsiaDataShowing: YES,
     asiaDataObserver: function() {
-        dataset = this.getDataset('as');
+        var dataset = this.getDataset('as');
         if (this.get('isAsiaDataShowing') === NO ) {
             this.deselectObject(dataset);
         } else {
-            this.selectObject(dataset, extend = YES);
+            this.selectObject(dataset, YES);
         }
-        FlotHumanPopulation.mainPage.mainPane.graph.plotDataDidChange()
+        FlotHumanPopulation.mainPage.mainPane.graph.plotDataDidChange();
     }.observes('isAsiaDataShowing'),
 
     isEuropeDataShowing: YES,
     europeDataObserver: function() {
-        dataset = this.getDataset('eu');
+        var dataset = this.getDataset('eu');
         if (this.get('isEuropeDataShowing') === NO ) {
             this.deselectObject(dataset);
         } else {
-            this.selectObject(dataset, extend = YES);
+            this.selectObject(dataset, YES);
         }
-        FlotHumanPopulation.mainPage.mainPane.graph.plotDataDidChange()
+        FlotHumanPopulation.mainPage.mainPane.graph.plotDataDidChange();
     }.observes('isEuropeDataShowing'),
 
     isLatinAmericaDataShowing: YES,
     latinAmericaDataObserver: function() {
-        dataset = this.getDataset('la');
+        var dataset = this.getDataset('la');
         if (this.get('isLatinAmericaDataShowing') === NO ) {
             this.deselectObject(dataset);
         } else {
-            this.selectObject(dataset, extend = YES);
+            this.selectObject(dataset, YES);
         }
-        FlotHumanPopulation.mainPage.mainPane.graph.plotDataDidChange()
+        FlotHumanPopulation.mainPage.mainPane.graph.plotDataDidChange();
     }.observes('isLatinAmericaDataShowing'),
 
     isNorthernAmericaDataShowing: YES,
     northernAmericaDataObserver: function() {
-        dataset = this.getDataset('na');
+        var dataset = this.getDataset('na');
         if (this.get('isNorthernAmericaDataShowing') === NO ) {
             this.deselectObject(dataset);
         } else {
-            this.selectObject(dataset, extend = YES);
+            this.selectObject(dataset, YES);
         }
-        FlotHumanPopulation.mainPage.mainPane.graph.plotDataDidChange()
+        FlotHumanPopulation.mainPage.mainPane.graph.plotDataDidChange();
     }.observes('isNorthernAmericaDataShowing'),
 
     isOceaniaDataShowing: YES,
     oceaniaDataObserver: function() {
-        dataset = this.getDataset('oc');
+        var dataset = this.getDataset('oc');
         if (this.get('isOceaniaDataShowing') === NO ) {
             this.deselectObject(dataset);
         } else {
-            this.selectObject(dataset, extend = YES);
+            this.selectObject(dataset, YES);
         }
-        FlotHumanPopulation.mainPage.mainPane.graph.plotDataDidChange()
-    }.observes('isOceaniaDataShowing'),
+        FlotHumanPopulation.mainPage.mainPane.graph.plotDataDidChange();
+    }.observes('isOceaniaDataShowing')
 
 });
 

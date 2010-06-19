@@ -5,7 +5,7 @@
 // License:   Licensed under MIT license (see license.js)
 // App:       FlotHumanPopulation
 // ==========================================================================
-/*globals FlotHumanPopulation Forms */
+/*globals FlotHumanPopulation Forms Flot */
 
 FlotHumanPopulation.mainPage = SC.Page.design({
     mainPane: SC.MainPane.design({
@@ -18,7 +18,7 @@ FlotHumanPopulation.mainPage = SC.Page.design({
                 layout: { centerY: 0, height: 24, left: 8, width: 500 },
                 controlSize: SC.LARGE_CONTROL_SIZE,
                 fontWeight: SC.BOLD_WEIGHT,
-                value: 'Human Population',
+                value: 'Human Population'
             })
         }),
         graph: Flot.GraphView.design({
@@ -60,12 +60,12 @@ FlotHumanPopulation.mainPage = SC.Page.design({
                 asia: SC.FormView.row(SC.CheckboxView.design({
                     layout: {width: 150, height: 24},
                     controlSize: SC.SMALL_CONTROL_SIZE,
-                    valueBinding: 'FlotHumanPopulation.graphController.isAsiaDataShowing',
+                    valueBinding: 'FlotHumanPopulation.graphController.isAsiaDataShowing'
                 })),
                 europe: SC.FormView.row(SC.CheckboxView.design({
                     layout: {width: 150, height: 24},
                     controlSize: SC.SMALL_CONTROL_SIZE,
-                    valueBinding: 'FlotHumanPopulation.graphController.isEuropeDataShowing',
+                    valueBinding: 'FlotHumanPopulation.graphController.isEuropeDataShowing'
                 })),
                 latin_america: SC.FormView.row(SC.CheckboxView.design({
                     layout: {width: 150, height: 24},
