@@ -26,7 +26,7 @@ RaphaelPlay.australianStatesController = SC.ArrayController.create(
     },
 
     nowShowing: function() {
-        return this.get('hasSelection') ? 'summaryView' : 'helpView'
+        return this.get('hasSelection') ? 'summaryView' : 'helpView';
     }.property('hasSelection').cacheable()
 
 });

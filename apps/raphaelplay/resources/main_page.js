@@ -1,7 +1,7 @@
 // ==========================================================================
 // Project:   raphaelplay - mainPage
 // ==========================================================================
-/*globals RaphaelPlay */
+/*globals RaphaelPlay Raphael */
 
 RaphaelPlay.mainPage = SC.Page.design({
 
@@ -11,7 +11,7 @@ RaphaelPlay.mainPage = SC.Page.design({
         summaryLabel: SC.LabelView.design({
             anchorLocation: SC.ANCHOR_TOP,
             displayValue: "Australian States",
-            classNames: ['state-summary-label'],
+            classNames: ['state-summary-label']
         }), 
 
         container: SC.ContainerView.design({
@@ -33,7 +33,7 @@ RaphaelPlay.mainPage = SC.Page.design({
             updateLayer: function() {
                 sc_super();
 
-                var r = Raphael(100, 180, 640, 480, RaphaelPlay.australianStatesController);
+                var r = new Raphael(100, 180, 640, 480, RaphaelPlay.australianStatesController);
 
                 // fill and stroke for default view of Australian states
 				var attr = { fill: "#333", stroke: "#666", "stroke-width": 1, "stroke-linejoin": "round" };
@@ -43,11 +43,11 @@ RaphaelPlay.mainPage = SC.Page.design({
                 
                 var australianStates = this.get('content');
 
-                if (australianStates != null) {
+                if (australianStates !== null) {
 				    var current = null;
 				
                     australianStates.forEach(function(australianState) {
-                        stateID = australianState.get('guid');
+                        var stateID = australianState.get('guid');
                         aus[stateID] = r.path(australianState.get('path')).attr(attr);
                         aus[stateID].color = Raphael.getColor(); 
 					    (function(st, stateID) {
@@ -70,7 +70,7 @@ RaphaelPlay.mainPage = SC.Page.design({
                                 st[0].onmouseover();
                             }
                         })(aus[stateID], stateID);
-                    })
+                    });
                 }
             }
         }) 
@@ -89,9 +89,9 @@ RaphaelPlay.mainPage = SC.Page.design({
             var population = '';
 
             var selectionSet = this.get('content');
-            if (selectionSet != null) {
-                selectedRecord = selectionSet.firstObject();
-                if (selectedRecord != null) {
+            if (selectionSet !== null) {
+                var selectedRecord = selectionSet.firstObject();
+                if (selectedRecord !== null) {
                     name = selectedRecord.get('name');
                     description = selectedRecord.get('description');
                     population = selectedRecord.get('population');
@@ -105,7 +105,7 @@ RaphaelPlay.mainPage = SC.Page.design({
             }
 
             sc_super();
-        },
+        }
     }),
 
     helpView: SC.LabelView.design( {
