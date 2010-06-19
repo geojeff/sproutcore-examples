@@ -5,7 +5,7 @@
 // License:   Licensed under MIT license (see license.js)
 // App:       FlotOilSpills
 // ==========================================================================
-/*globals FlotOilSpills Forms */
+/*globals FlotOilSpills Forms Flot */
 
 FlotOilSpills.mainPage = SC.Page.design({
     mainPane: SC.MainPane.design({
@@ -18,7 +18,7 @@ FlotOilSpills.mainPage = SC.Page.design({
                 layout: { centerY: 0, height: 24, left: 8, width: 500 },
                 controlSize: SC.LARGE_CONTROL_SIZE,
                 fontWeight: SC.BOLD_WEIGHT,
-                value: 'Oil Spills',
+                value: 'Oil Spills'
             })
         }),
 
@@ -74,7 +74,7 @@ FlotOilSpills.mainPage = SC.Page.design({
                                             var oil_spill_name = FlotOilSpills.spillController.getName(item.dataIndex);
                                             var plot_x = item.pageX - plot.offset().left;
                                             var plot_width = plot.width();
-                                            var margin = plot_width * 0.05
+                                            var margin = plot_width * 0.05;
                                             var x = item.pageX;
                                             if (plot_x >= (plot_width - margin)) {
                                                 x = x - margin;
@@ -146,7 +146,7 @@ FlotOilSpills.mainPage = SC.Page.design({
                 this.invokeOnce(function() {
                     this.set('layerNeedsUpdate', YES);
                 }) ;
-            },
+            }
         }),
         directions: SC.LabelView.design({
             layout: { left: 40, bottom: 380, right: 0, height: 40 },
@@ -163,13 +163,12 @@ FlotOilSpills.mainPage = SC.Page.design({
                 rowSpacing: 0,
                 actOnSelect: YES,
                 action: 'FlotOilSpills.spillController.listItemSelected'
-            }), 
+            }) 
         }),
         explanation: SC.LabelView.design({
             layout: { left: 40, bottom: 0, right: 0, height: 40 },
             value: 'Data is from Wikipedia&#39;s <a href="http://en.wikipedia.org/wiki/List_of_oil_spills">List of Oil Spills page</a>. CSS styling is from <a href="http://frozencanuck.wordpress.com/2009/09/06/creating-a-simple-custom-list-item-view-part-1/">frozencanuck&#39;s blog page</a>. The graph illustrates interactivity like this <a href="http://people.iola.dk/olau/flot/examples/interacting.html">Flot example</a>.',
             escapeHTML: NO
-        }),
-
+        })
     })
 });
