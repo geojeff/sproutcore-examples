@@ -2,7 +2,7 @@
 // Project:   FlotGraphTypes - mainPage
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals FlotGraphTypes */
+/*globals FlotGraphTypes Flot */
 
 FlotGraphTypes.mainPage = SC.Page.design({
 
@@ -16,7 +16,7 @@ FlotGraphTypes.mainPage = SC.Page.design({
                 layout: { centerY: 0, height: 24, left: 8, width: 500 },
                 controlSize: SC.LARGE_CONTROL_SIZE,
                 fontWeight: SC.BOLD_WEIGHT,
-                value: 'Flot Graph Types',
+                value: 'Flot Graph Types'
             })
         }),
         graph: Flot.GraphView.design({

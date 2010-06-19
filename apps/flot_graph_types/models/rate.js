@@ -12,6 +12,6 @@ FlotGraphTypes.rate = SC.Record.extend(
 /** @scope FlotGraphTypes.rate.prototype */ {
 
   epoch: SC.Record.attr(Number),
-  rate: SC.Record.attr(Number),
+  rate: SC.Record.attr(Number)
 
-}) ;
+});

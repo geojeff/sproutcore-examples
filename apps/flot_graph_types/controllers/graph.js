@@ -11,6 +11,6 @@ FlotGraphTypes.graphController = SC.ArrayController.create(
 /** @scope FlotGraphTypes.pricesController.prototype */ {
 	
 	content: [],
-	options: SC.Object.create({}),
+	options: SC.Object.create({})
 
 });
