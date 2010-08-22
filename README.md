@@ -117,8 +117,8 @@ and flot in your frameworks and, depending on how you have your development
 environment set up, maybe sproutcore itself, the quilmes branch, which contains
 the latest development code. To do all of this properly, as a repo that you
 could clone and get running immediately, I should use git submodule setup for these 
-framework libraries. As it stands now, you'll need to handle getting flot and
-maybe sproutcore in your frameworks directory. For flot, you can clone Bo Xiao's
+framework libraries. As it stands now, you'll need to handle getting flot, and
+Raphael, and sproutcore in your frameworks directory. For flot, you can clone Bo Xiao's
 [flot-integration](http://github.com/imxiaobo/iamxiaobo/tree/master/flot-integration), which will
 get you a demo app in a separate flot-integration directory, with its own apps
 and frameworks directories. I did that, played with the demo, looked things
@@ -127,3 +127,13 @@ sproutcore-examples (sproutcore-examples/frameworks/).
   
 Later, you should be able to just clone sproutcore-examples and do a couple of 
 git steps to be all set up, but this is how it goes for now.
+
+For phone_controls there are metatags needed in the root html page. Depending on your dev
+tools, you may or may not have to add these manually. See this page at Apple describing
+(metatags)[http://developer.apple.com/safari/library/documentation/appleapplications/reference/safarihtmlref/articles/metatags.html] for background, but the needed tags are
+something like:
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name = "viewport" content = "initial-scale = 1.0, width = 320, height = 480, user-scalable = no">
+
