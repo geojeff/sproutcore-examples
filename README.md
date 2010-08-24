@@ -119,7 +119,7 @@ the latest development code. To do all of this properly, as a repo that you
 could clone and get running immediately, I should use git submodule setup for these 
 framework libraries. As it stands now, you'll need to handle getting flot, and
 Raphael, and sproutcore in your frameworks directory. For flot, you can clone Bo Xiao's
-[flot-integration](http://github.com/imxiaobo/iamxiaobo/tree/master/flot-integration), which will
+[flot-sproutcore](http://github.com/imxiaobo/flot-sproutcore), which will
 get you a demo app in a separate flot-integration directory, with its own apps
 and frameworks directories. I did that, played with the demo, looked things
 over, then copied flot-integration/frameworks/flot into the same place in
