@@ -2,10 +2,10 @@ Introduction
 ============
 
 This repository was set up for posting and maintaining small projects illustrating
-Sproutcore functionality. I started with Sproutcore in April 2009, and soon
+SproutCore functionality. I started with SproutCore in April 2009, and soon
 found a compelling case for using it for web development. I started learning by
-going through the Todos example on the Sproutcore web site, then gave embedding
-Raphael javascript in a Sproutcore view (raphaelplay example) a try. After that,
+going through the Todos example on the SproutCore web site, then gave embedding
+Raphael javascript in a SproutCore view (raphaelplay example) a try. After that,
 attention turned to work done by Alex Iskander, who was very helpful with learning 
 the latest and greatest, showcased in several apps, which are descendants of his 
 [test_controls app](http://create.tpsitulsa.com/sc/test_controls.html).
@@ -16,14 +16,14 @@ Raphael code.  See this [post](http://colincodes.tumblr.com/post/512234561/sprou
 by Colin Campbell that explains why.
 
 Another tip was how to use SC.RunLoop.begin() and .end() in the interfacing 
-between Raphael and Sproutcore. Using these calls around a block of code will
-issue a kind of pause in the action of Sproutcore bindings and other things,
+between Raphael and SproutCore. Using these calls around a block of code will
+issue a kind of pause in the action of SproutCore bindings and other things,
 so the code in the block is executed immediately. It is a performance tweak.
 
 It is now November, 2010, and development on SproutCore has progressed. The project
 here is still developed against the leading edge of SproutCore, which is now at:
 
-[Sproutcore on Github](http://github.com/sproutcore)
+[SproutCore on Github](http://github.com/sproutcore)
 
 (The master branch, the default when you clone, which is what you want for this
 sproutcore-examples project, is the development branch; stable release branches must 
