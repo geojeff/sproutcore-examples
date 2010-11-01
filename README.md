@@ -128,7 +128,7 @@ Other
 
 For phone_controls there are metatags needed in the root html page. Depending on your dev
 tools, you may or may not have to add these manually. See this page at Apple describing
-(metatags)[http://developer.apple.com/safari/library/documentation/appleapplications/reference/safarihtmlref/articles/metatags.html] for background, but the needed tags are
+[metatags](http://developer.apple.com/safari/library/documentation/appleapplications/reference/safarihtmlref/articles/metatags.html) for background, but the needed tags are
 something like:
 
     <meta name="apple-mobile-web-app-capable" content="yes">
