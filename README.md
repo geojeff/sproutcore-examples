@@ -25,8 +25,9 @@ here is still developed against the leading edge of SproutCore, which is now at:
 
 [Sproutcore on Github](http://github.com/sproutcore)
 
-(The master branch, the default when you clone, is the development branch; stable
-release branches must be switched to, if you want one of those).
+(The master branch, the default when you clone, which is what you want for this
+sproutcore-examples project, is the development branch; stable release branches must 
+be switched to, if you want one of those for use in other projects).
 
 The apps in sproutcore-examples here have been live on geojeff.com since May 2010,
 and were deployed using the SproutCore development branch active at that time (and
@@ -49,7 +50,7 @@ So, clone it and try it out if you want, but realize that you may want to
 become familiar with simpler cases of developing single apps, and also that it
 uses the active development branch of SproutCore. Still, people fairly fresh to 
 SproutCore pop into IRC asking questions that are answered by showing them this 
-project (e.g., about Buildfile tweaks, about deploying and app). 
+project (e.g., about Buildfile tweaks, about deploying an app). 
 
 For deploying, even for a single app, I like the approach taken here, using in 
 this case a custom python script using the Fabric library to automate grabbing 
