@@ -72,12 +72,11 @@ Richard Klancer helped me one afternoon to set up my github account,
 through creating this repository.  It might be useful to see the steps taken
 to set this up.  I already had raphaelplay within my own dev area on my system
 (Macbook Pro), so it was a matter of creating the repository on github through
-the github web interface, followed by command line steps to send it up. From 
-my command line history, here are steps, which include those to avoid putting
-unneeded tmp and vi ~ files in the repo (something realized along the way):
+the github web interface, followed by command line steps to send it up:
 
-1. Create github account (geojeff) and fill in basic info.
-2. Generate public ssh key for setting up communications between my local
+1. Created github account (geojeff) and filled in basic info.
+
+2. Generated public ssh key for setting up communications between my local
    system and github.
 
         cd ~/.ssh                 // - .ssh in my home dir has personal ssh info
@@ -85,9 +84,9 @@ unneeded tmp and vi ~ files in the repo (something realized along the way):
         cat id_rsa.pub | pbcopy   // - copy the key using handy pipe to pbcopy
         ssh git@github.com        // - hit github.com to initialize
 
-3. Make a sproutcore-examples directory in my development area, on a Macbook Pro. 
-   Move raphaelplay, the first app I started, into the apps directory of 
-   sproutcore-examples, then proceed with git configuration and initialization steps.
+3. Made a sproutcore-examples directory in my development area, on a Macbook Pro. 
+   Moved raphaelplay, the first app I started, into the apps directory of 
+   sproutcore-examples, then proceeded with git configuration and initialization steps.
 
 4. For setting up to run the examples on my local computer, inside the
    sproutcore-examples project directory, created a frameworks directory, along
