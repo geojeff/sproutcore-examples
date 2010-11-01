@@ -28,10 +28,32 @@ here is still developed against the leading edge, which is now at:
 Also, several other projects have developed more formal ways of doing graphics in 
 SproutCore. One that is getting active development is:
 
-[Sai](http://github.com/etgrypon/Sai)
+[Sai](http://github.com/etgryphon/Sai)
 
 Sai takes code from Raphael and reworks it for use as a proper SproutCore
 library.
+
+Finally, if you are getting started with SproutCore, and you are working your
+way through the tutorials and example apps, you will notice that this suite
+of example apps has a more complicated Buildfile and contains multiple apps.
+So, clone it and try it out if you want, but realize that you may want to 
+become familiar with simpler cases of developing single apps, and also that it
+uses the active development branch of SproutCore. Still, people fairly fresh to 
+SproutCore pop into IRC asking questions that are answered by showing them this 
+project (e.g., about Buildfile tweaks, about deploying and app). 
+
+For deploying, even for a single app, I like the approach taken here, using in 
+this case a custom python script using the Fabric library to automate grabbing 
+generated SproutCore code, making a tarball, sending it up to a server, exploding, 
+and doing final deploy tasks. When you get to this more advanced stage of the game, 
+you could check out how this deploy script is prepared for use in this project 
+(It is put in sproutcore-examples/deploy):
+
+[Fabric deploy example](http://github.com/geojeff/sproutcore-utils/deploy)
+
+And, for help, visit the #sproutcore IRC channel and use the mailing list:
+
+[SproutCore mailing list](http://groups.google.com/group/sproutcore)
 
 Github Setup
 ------------
@@ -81,10 +103,10 @@ In late May 2010 several examples of graphs using the Flot javascript library we
 added, with the help of Avi and others  on the irc channel (#sproutcore).
 
 For flot, you can clone Bo Xiao's [flot-sproutcore](http://github.com/imxiaobo/flot-sproutcore), which will
-get you a demo app in a separate flot-integration directory, with its own apps
-and frameworks directories. I did that, played with the demo, looked things
-over, then copied flot-integration/frameworks/flot into the same place in
-sproutcore-examples (sproutcore-examples/frameworks/). 
+get you a demo app in a separate directory, with its own apps and frameworks 
+directories. I did that, played with the demo, looked things over, then copied 
+flot-integration/frameworks/flot into the same place in sproutcore-examples 
+(sproutcore-examples/frameworks/). 
   
 Raphael
 -------
