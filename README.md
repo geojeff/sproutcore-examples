@@ -21,9 +21,18 @@ issue a kind of pause in the action of Sproutcore bindings and other things,
 so the code in the block is executed immediately. It is a performance tweak.
 
 It is now November, 2010, and development on SproutCore has progressed. The project
-here is still developed against the leading edge, which is now at:
+here is still developed against the leading edge of SproutCore, which is now at:
 
 [Sproutcore on Github](http://github.com/sproutcore)
+
+(The master branch, the default when you clone, is the development branch; stable
+release branches must be switched to, if you want one of those).
+
+The apps in sproutcore-examples here have been live on geojeff.com since May 2010,
+and were deployed using the SproutCore development branch active at that time (and
+tested and working with that development state):
+
+[Live examples](http://www.geojeff.com)
 
 Also, several other projects have developed more formal ways of doing graphics in 
 SproutCore. One that is getting active development is:
@@ -49,7 +58,7 @@ and doing final deploy tasks. When you get to this more advanced stage of the ga
 you could check out how this deploy script is prepared for use in this project 
 (It is put in sproutcore-examples/deploy):
 
-[Fabric deploy example](http://github.com/geojeff/sproutcore-utils/deploy)
+[Fabric deploy example](http://github.com/geojeff/sproutcore-utils/tree/master/deploy/)
 
 And, for help, visit the #sproutcore IRC channel and use the mailing list:
 
