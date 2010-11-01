@@ -20,6 +20,19 @@ between Raphael and Sproutcore. Using these calls around a block of code will
 issue a kind of pause in the action of Sproutcore bindings and other things,
 so the code in the block is executed immediately. It is a performance tweak.
 
+It is now November, 2010, and development on SproutCore has progressed. The project
+here is still developed against the leading edge, which is now at:
+
+[Sproutcore on Github](http://github.com/sproutcore)
+
+Also, several other projects have developed more formal ways of doing graphics in 
+SproutCore. One that is getting active development is:
+
+[Sai](http://github.com/etgrypon/Sai)
+
+Sai takes code from Raphael and reworks it for use as a proper SproutCore
+library.
+
 Github Setup
 ------------
 
@@ -59,7 +72,7 @@ unneeded tmp and vi ~ files in the repo (something realized along the way):
 
   As of November 2010, to get the latest development version of SproutCore,
   clone from http://github/sproutcore into the frameworks directory (And
-  you will also need flot and raphale in there; see below).
+  you will also need flot and raphael in there; see below).
 
 Flot
 ----
@@ -76,7 +89,8 @@ sproutcore-examples (sproutcore-examples/frameworks/).
 Raphael
 -------
 
-Clone this into the sproutcore-examples/frameworks directory also.
+Clone this into the sproutcore-examples/frameworks directory also. There is no
+integration wrapper as there is for flot, so take note of how it is used.
 
 Other
 -----
